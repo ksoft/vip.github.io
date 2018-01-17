@@ -1,0 +1,45 @@
+# Site settings
+title: K963的博客
+email: k963@vip.qq.com
+description: > # this means to ignore newlines until "baseurl:"
+  K963的博客
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: http://www.datuzi.vip # the base hostname & protocol for your site
+rss_url: /pages/feed.xml
+author: K963
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+recent_num: 20
+
+# Social account
+weibo: 2076659595
+github: ksoft
+
+# avatar and Favicon
+avatar: http://7u2ho6.com1.z0.glb.clouddn.com/site-avatar.png
+favicon: http://7u2ho6.com1.z0.glb.clouddn.com/site-favicon.ico
+
+# google analytics config
+ga:
+  id: UA-54767140-1
+  url: www.datuzi.vip
+
+# Build settings
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+highlighter: rouge
+mathjax: disabled
+sass:
+  style: compressed
+
+# Jekyll Plugin
+# https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+
+theme: jekyll-theme-midnight

@@ -1,0 +1,39 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include sidebar.html %}
+
+    <main id="main" class="open">
+      {{ content }}
+
+        <!-- UY BEGIN -->
+        <div id="uyan_frame"></div>
+        <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2155305"></script>
+        <!-- UY END -->
+      <div class="footer">
+        <div class="container">
+          <p class="footer-entry">Copyright © 2018-2099 All Rights Reserved</p>
+            <img class="footer-entry"><img border="0" src="http://wpa.qq.com/pa?p=2:1158575655:52">:1158575655</img></p>
+        </div>
+      </div>
+    </main>
+
+    <button id="menu" class="open">
+      <span id="menu-icons"></span>
+    </button>
+
+    <button id="post-toc-menu">
+      <span id="post-toc-menu-icons"></span>
+    </button>
+    <div id="post-toc">
+      <span id="post-toc-title">Table of Contents</span>
+      <ul id="post-toc-ul"></ul>
+    </div>
+
+    {% include scripts.html %}
+  </body>
+</html>
