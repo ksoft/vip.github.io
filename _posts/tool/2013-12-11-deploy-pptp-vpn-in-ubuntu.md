@@ -108,7 +108,7 @@ keywords: Linux,pptp,vpn
 
 ## 自动脚本
 
-    wget -c https://github.com/suyan/scripts/raw/master/Setup/pptp.sh
+    
 
 ## 问题
 

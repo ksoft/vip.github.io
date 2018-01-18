@@ -102,4 +102,3 @@ SAE将每天的日志文件都打包成tar.gz的格式，下载保存下来即�
 [github][2]
 
 [1]: http://sae.sina.com.cn/?m=devcenter&catId=281
-[2]: https://github.com/suyan/Scripts/blob/master/Python/sae-log-download.py
