@@ -18,8 +18,8 @@ weibo: 2076659595
 github: ksoft
 
 # avatar and Favicon
-avatar: http://www.datuzi.vip/assets/img/avatar.jpg
-favicon: http://www.datuzi.vip/assets/img/avatar.jpg
+avatar: https://download.fangcloud.cn/download/a54d5628fdd344ecbca583ab263883b8/439df68e1b06ba669fb4ccda8186068e151fad74fbbd75fea2d04362aae0e081/avatar.jpg
+favicon: https://download.fangcloud.cn/download/a54d5628fdd344ecbca583ab263883b8/439df68e1b06ba669fb4ccda8186068e151fad74fbbd75fea2d04362aae0e081/avatar.jpg
 
 # google analytics config
 ga:
