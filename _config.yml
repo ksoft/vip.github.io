@@ -18,8 +18,8 @@ weibo: 2076659595
 github: ksoft
 
 # avatar and Favicon
-avatar: assets/img/100.jpg
-favicon: assets/img/100.jpg
+avatar: assets/img/avatar.jpg
+favicon: assets/img/avatar.jpg
 
 # google analytics config
 ga:
