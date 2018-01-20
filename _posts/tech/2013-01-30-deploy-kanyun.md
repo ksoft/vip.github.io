@@ -38,7 +38,6 @@ description: 在OpenStack中部署kanyun
 kanyun原来的代码有bug，而且不能在python2.6环境下使用，下面是我改过的
 
     cd /opt
-    git clone https://github.com/suyan/kanyun.git
 
 修改内容：
 
