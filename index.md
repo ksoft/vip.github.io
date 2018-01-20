@@ -9,6 +9,5 @@ layout: post
 
 ## LOVE
 
-让世界充满爱
 
 ![MyLove](http://www.datuzi.vip/photos/mylove/love.jpg)
