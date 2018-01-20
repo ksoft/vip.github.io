@@ -11,4 +11,4 @@ layout: post
 
 让世界充满爱
 
-![MyLove](http://datuzi.vip/photos/mylove/love.jpg)
+![MyLove](http://www.datuzi.vip/photos/mylove/love.jpg)
