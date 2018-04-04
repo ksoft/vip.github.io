@@ -1,9 +1,9 @@
 ---
 layout: post
-title: spring
+title: spring ThreadPoolTaskExecutor
 category: 技术
-tags: spring
-keywords: spring
+tags: spring ThreadPoolTaskExecutor
+keywords: spring ThreadPoolTaskExecutor
 ---
 
 ## 配置taskExecutor
