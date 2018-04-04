@@ -5,7 +5,6 @@ category: 技术
 tags: SpringMVC和Struts2区别
 keywords: SpringMVC和Struts2区别
 ---
-## SpringMVC和Struts2区别
 
 1、Struts2是类级别的拦截， 一个类对应一个request上下文，SpringMVC是方法级别的拦截，一个方法对应一个request上下文，而方法同时又跟一个url对应,所以说从架构本身上SpringMVC就容易实现restful url,而struts2的架构实现起来要费劲，因为Struts2中Action的一个方法可以对应一个url，而其类属性却被所有方法共享，这也就无法用注解或其他方式标识其所属方法了。
 
