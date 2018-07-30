@@ -18,8 +18,8 @@ weibo: 2076659595
 github: ksoft
 
 # avatar and Favicon
-avatar: assets/img/avatar.jpg
-favicon: assets/img/avatar.jpg
+avatar: http://www.datuzi.vip/assets/img/avatar.jpg
+favicon: http://www.datuzi.vip/assets/img/avatar.jpg
 
 # google analytics config
 ga:
