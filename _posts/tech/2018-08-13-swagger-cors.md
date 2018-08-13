@@ -2,8 +2,8 @@
 layout: post
 title: swagger 跨域访问配置
 category: 技术
-tags: swagger cros
-keywords: swagger cros
+tags: swagger cors
+keywords: swagger cors
 ---
 
 ## 添加CorsConfig
