@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.MonAlertRuleItemMapper">
+	<resultMap type="com.jlt.datasync.domain.MonAlertRuleItem" id="monAlertRuleItemResultMap">
+		<result property="id" column="id"/>
+		<result property="tenantId" column="tenant_id"/>
+		<result property="pmCode" column="pm_code"/>
+		<result property="alertRulePmCode" column="alert_rule_pm_code"/>
+		<result property="ruleItemCode" column="rule_item_code"/>
+		<result property="ruleItemValue" column="rule_item_value"/>
+		<result property="itemDesc" column="item_desc"/>
+		<result property="creator" column="creator"/>
+		<result property="createName" column="create_name"/>
+		<result property="createTime" column="create_time"/>
+		<result property="modifier" column="modifier"/>
+		<result property="modifyName" column="modify_name"/>
+		<result property="modifyTime" column="modify_time"/>
+	</resultMap>
+	<sql id="select">
+		<![CDATA[
+			SELECT 
+					id,
+					tenant_id,
+					pm_code,
+					alert_rule_pm_code,
+					rule_item_code,
+				    rule_item_value,
+					item_desc,
+					creator,
+					create_name,
+					create_time,
+					modifier,
+					modify_name,
+					modify_time
+		]]>
+	</sql>
+
+	<sql id="findByExample">
+		WHERE 1=1
+		<if test="id!=null and id!=''"> AND id =#{id}</if>
+        <if test="tenantId!=null">AND tenant_id = #{tenantId}</if>
+		<if test="alertRulePmCode!=null">AND alert_rule_pm_code = #{alertRulePmCode}</if>
+	</sql>
+
+	<select id="findByCondition" resultMap="monAlertRuleItemResultMap" parameterType="com.jlt.datasync.condition.MonAlertRuleItemCondition">
+		<include refid="select"/>
+		FROM  mon_alert_rule_item
+		<include refid="findByExample"/>
+	</select>
+</mapper>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.MonAlertRuleMapper">
+    <resultMap type="com.jlt.datasync.domain.MonAlertRule" id="monAlertRuleResultMap">
+        <result property="id" column="id"/>
+        <result property="tenantId" column="tenant_id"/>
+        <result property="pmCode" column="pm_code"/>
+        <result property="alertRuleType" column="alert_rule_type"/>
+        <result property="alertRuleCode" column="alert_rule_code"/>
+        <result property="alertType" column="alert_type"/>
+        <result property="ruleType" column="rule_type"/>
+        <result property="isEnable" column="is_enable"/>
+        <result property="isNotify" column="is_notify"/>
+        <result property="isSms" column="is_sms"/>
+        <result property="isEmail" column="is_email"/>
+        <result property="isMessage" column="is_message"/>
+        <result property="isTemperature" column="is_temperature"/>
+        <result property="temperatureCycleAlert" column="temperature_cycle_alert"/>
+        <result property="temperatureDataAlert" column="temperature_data_alert"/>
+        <result property="temperatureIntervalAlert" column="temperature_interval_alert"/>
+        <result property="creator" column="creator"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modifyName" column="modify_name"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+    <sql id="select">
+		<![CDATA[
+			SELECT
+					id,
+					tenant_id,
+					pm_code,
+					alert_rule_type,
+					alert_rule_code,
+					alert_type,
+					rule_type,
+					is_enable,
+					is_notify,
+					is_sms,
+					is_email,
+					is_message,
+					is_temperature,
+					temperature_cycle_alert,
+					temperature_data_alert,
+					temperature_interval_alert,
+					creator,
+					create_name,
+					create_time,
+					modifier,
+					modify_name,
+					modify_time
+        ]]>
+	</sql>
+
+    <sql id="findByExample">
+        WHERE 1=1
+        <if test="id!=null and id!=''">AND id =#{id}</if>
+        <if test="tenantId!=null">AND tenant_id = #{tenantId}</if>
+        <if test="isEnable!=null">AND is_enable = #{isEnable}</if>
+        <if test="alertRuleCode!=null">AND alert_rule_code = #{alertRuleCode}</if>
+    </sql>
+
+    <select id="findByCondition" resultMap="monAlertRuleResultMap" parameterType="com.jlt.datasync.condition.MonAlertRuleCondition">
+        <include refid="select"/>
+        FROM mon_alert_rule
+        <include refid="findByExample"/>
+    </select>
+
+    <select id="findOne" resultMap="monAlertRuleResultMap" parameterType="com.jlt.datasync.condition.MonAlertRuleCondition">
+        <include refid="select"/>
+        FROM mon_alert_rule
+        <include refid="findByExample"/>
+        limit 1
+    </select>
+</mapper>

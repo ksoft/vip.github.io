@@ -1,0 +1,420 @@
+15:30:22 INFO  [main] c.jlt.startup.DataSyncWebApplication - Starting DataSyncWebApplication on user-PC with PID 6260 (D:\20181231\jlt-datasync-GY\jlt-datasync-web\target\classes started by Billy.Zhang in D:\20181231\jlt-datasync-GY)
+15:30:22 INFO  [main] c.jlt.startup.DataSyncWebApplication - The following profiles are active: sit
+15:30:22 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+15:30:22 INFO  [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34f22f9d: startup date [Wed Dec 12 15:30:22 CST 2018]; root of context hierarchy
+15:30:23 INFO  [main] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [popwin.xml]
+15:30:23 INFO  [main] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/dubbo-gy.xml]
+15:30:23 INFO  [main] c.a.d.common.logger.LoggerFactory - using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+15:30:23 INFO  [main] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [META-INF/spring/dubbo-consumer-ums.xml]
+15:30:23 INFO  [main] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from file [D:\20181231\jlt-datasync-GY\jlt-datasync-web\target\classes\datasync\context-threadpool.xml]
+15:30:24 WARN  [main] o.m.s.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.jlt.datasync.mapper.upm]' package. Please check your configuration.
+15:30:24 INFO  [main] o.s.b.f.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationContext-tx.xml]
+15:30:24 INFO  [main] o.s.b.f.s.DefaultListableBeanFactory - Overriding bean definition for bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory' with a different definition: replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration; factoryMethodName=transactionalEventListenerFactory; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/transaction/annotation/ProxyTransactionManagementConfiguration.class]] with [Root bean: class [org.springframework.transaction.event.TransactionalEventListenerFactory]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]
+15:30:24 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dubbo-ums-consumer' of type [com.alibaba.dubbo.config.RegistryConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.dubbo.config.ConsumerConfig' of type [com.alibaba.dubbo.config.ConsumerConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jlt-datasync-gy' of type [com.alibaba.dubbo.config.ApplicationConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'umsCdSmsLogFacade' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'umsEsEmailFacade' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'umsWechatFacade' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:24 INFO  [main] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'umsMessageFacade' of type [com.alibaba.dubbo.config.spring.ReferenceBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:30:26 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8081 (http)
+15:30:26 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+15:30:26 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+15:30:26 INFO  [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:30:26 INFO  [localhost-startStop-1] o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4080 ms
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'com.sinoservices.minima.mybatis.druid.DruidStatViewServlet' to [/druid/*]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+15:30:27 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'druidWebStatFilter' to urls: [/*]
+15:30:28 INFO  [main] c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Load registry store file \dubbocache\jlt-datasync-gy\consumer\ums\dubbo.cache, data: {com.jlt.ums.facade.message.UmsMessageFacade=empty://173.1.254.140/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=configurators&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,publishMessage,countIsReadByOrgId,updateMsgIsRead,deleteByIds,countIsRead&pid=3848&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544171808938 empty://173.1.254.140/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=routers&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,publishMessage,countIsReadByOrgId,updateMsgIsRead,deleteByIds,countIsRead&pid=3848&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544171808938 hessian://192.168.3.163:30907/com.jlt.ums.facade.message.UmsMessageFacade?anyhost=true&application=jlt-ums&default.delay=-1&default.retries=0&default.timeout=-1&delay=-1&dubbo=2.8.1&generic=false&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,countIsReadByOrgId,publishMessage,insert,updateMsgIsRead,deleteByIds,countIsRead&pid=26168&revision=4.11.2.20181130-SNAPSHOT&side=provider&timestamp=1543839445321}, dubbo version: 2.8.1, current host: 127.0.0.1
+15:30:28 INFO  [ZkClient-EventThread-49-192.168.3.163:2181] org.I0Itec.zkclient.ZkEventThread - Starting ZkClient event thread.
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:host.name=user-PC
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.version=1.8.0_25
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.vendor=Oracle Corporation
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.home=C:\Program Files\Java\jdk1.8.0_25\jre
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.class.path=C:\Program Files\Java\jdk1.8.0_25\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_25\jre\lib\rt.jar;D:\20181231\jlt-datasync-GY\jlt-datasync-web\target\classes;D:\20181231\jlt-datasync-GY\jlt-datasync-biz\target\classes;D:\repository\org\mybatis\spring\boot\mybatis-spring-boot-starter\1.3.1\mybatis-spring-boot-starter-1.3.1.jar;D:\repository\org\mybatis\spring\boot\mybatis-spring-boot-autoconfigure\1.3.1\mybatis-spring-boot-autoconfigure-1.3.1.jar;D:\repository\org\mybatis\mybatis\3.4.5\mybatis-3.4.5.jar;D:\repository\org\mybatis\mybatis-spring\1.3.1\mybatis-spring-1.3.1.jar;D:\repository\org\springframework\boot\spring-boot-starter-jdbc\1.5.8.RELEASE\spring-boot-starter-jdbc-1.5.8.RELEASE.jar;D:\repository\org\apache\tomcat\tomcat-jdbc\8.5.23\tomcat-jdbc-8.5.23.jar;D:\repository\org\apache\tomcat\tomcat-juli\8.5.23\tomcat-juli-8.5.23.jar;D:\repository\org\springframework\spring-jdbc\4.3.12.RELEASE\spring-jdbc-4.3.12.RELEASE.jar;D:\repository\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar;D:\repository\com\sinoservices\jlt-common-starter\2.0-SNAPSHOT\jlt-common-starter-2.0-20180920.124748-817.jar;D:\repository\org\springframework\spring-aop\4.3.12.RELEASE\spring-aop-4.3.12.RELEASE.jar;D:\repository\org\springframework\boot\spring-boot-starter-web\1.5.8.RELEASE\spring-boot-starter-web-1.5.8.RELEASE.jar;D:\repository\org\springframework\boot\spring-boot-starter-tomcat\1.5.8.RELEASE\spring-boot-starter-tomcat-1.5.8.RELEASE.jar;D:\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.23\tomcat-embed-core-8.5.23.jar;D:\repository\org\apache\tomcat\tomcat-annotations-api\8.5.23\tomcat-annotations-api-8.5.23.jar;D:\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.23\tomcat-embed-el-8.5.23.jar;D:\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.23\tomcat-embed-websocket-8.5.23.jar;D:\repository\org\hibernate\hibernate-validator\5.3.5.Final\hibernate-validator-5.3.5.Final.jar;D:\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar;D:\repository\org\jboss\logging\jboss-logging\3.3.1.Final\jboss-logging-3.3.1.Final.jar;D:\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;D:\repository\org\springframework\spring-webmvc\4.3.12.RELEASE\spring-webmvc-4.3.12.RELEASE.jar;D:\repository\javax\cache\cache-api\1.0.0\cache-api-1.0.0.jar;D:\repository\org\springframework\boot\spring-boot-starter-cache\1.5.8.RELEASE\spring-boot-starter-cache-1.5.8.RELEASE.jar;D:\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;D:\repository\org\springframework\boot\spring-boot-starter-logging\1.5.8.RELEASE\spring-boot-starter-logging-1.5.8.RELEASE.jar;D:\repository\ch\qos\logback\logback-classic\1.1.11\logback-classic-1.1.11.jar;D:\repository\ch\qos\logback\logback-core\1.1.11\logback-core-1.1.11.jar;D:\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;D:\repository\org\slf4j\log4j-over-slf4j\1.7.25\log4j-over-slf4j-1.7.25.jar;D:\repository\org\springframework\spring-aspects\4.3.12.RELEASE\spring-aspects-4.3.12.RELEASE.jar;D:\repository\org\aspectj\aspectjweaver\1.8.9\aspectjweaver-1.8.9.jar;D:\repository\org\aspectj\aspectjrt\1.8.9\aspectjrt-1.8.9.jar;D:\repository\commons-httpclient\commons-httpclient\3.1\commons-httpclient-3.1.jar;D:\repository\commons-logging\commons-logging\1.0.4\commons-logging-1.0.4.jar;D:\repository\commons-io\commons-io\1.3.2\commons-io-1.3.2.jar;D:\repository\com\alibaba\fastjson\1.2.40\fastjson-1.2.40.jar;D:\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;D:\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;D:\repository\com\sinoservices\3rd\jar\mail\1.0\mail-1.0.jar;D:\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;D:\repository\com\sinoservices\JLT\jlt-common\6.5.2.20180530-SNAPSHOT\jlt-common-6.5.2.20180530-20180831.154941-32.jar;D:\repository\com\sinoservices\JLT\jlt-push\5.3.1.20170915-SNAPSHOT\jlt-push-5.3.1.20170915-20180125.084212-455.jar;D:\repository\com\sinoservices\core\jar\components-number\3.0.1\components-number-3.0.1.jar;D:\repository\com\sinoservices\core\jar\x-components\1.0\x-components-1.0.jar;D:\repository\com\sinoservices\core\jar\tangram-core\5.0.22\tangram-core-5.0.22.jar;D:\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;D:\repository\org\apache\httpcomponents\httpcore\4.4.8\httpcore-4.4.8.jar;D:\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;D:\repository\org\springframework\boot\spring-boot-starter-aop\1.5.8.RELEASE\spring-boot-starter-aop-1.5.8.RELEASE.jar;D:\repository\org\reflections\reflections\0.9.9\reflections-0.9.9.jar;D:\repository\com\google\code\findbugs\annotations\2.0.1\annotations-2.0.1.jar;D:\repository\org\apache\commons\commons-pool2\2.4.2\commons-pool2-2.4.2.jar;D:\repository\org\springframework\boot\spring-boot\1.5.8.RELEASE\spring-boot-1.5.8.RELEASE.jar;D:\repository\org\springframework\boot\spring-boot-autoconfigure\1.5.8.RELEASE\spring-boot-autoconfigure-1.5.8.RELEASE.jar;D:\repository\org\springframework\spring-core\4.3.12.RELEASE\spring-core-4.3.12.RELEASE.jar;D:\repository\org\springframework\boot\spring-boot-starter-data-redis\1.5.8.RELEASE\spring-boot-starter-data-redis-1.5.8.RELEASE.jar;D:\repository\org\springframework\boot\spring-boot-starter\1.5.8.RELEASE\spring-boot-starter-1.5.8.RELEASE.jar;D:\repository\org\yaml\snakeyaml\1.17\snakeyaml-1.17.jar;D:\repository\org\springframework\data\spring-data-redis\1.8.8.RELEASE\spring-data-redis-1.8.8.RELEASE.jar;D:\repository\org\springframework\data\spring-data-keyvalue\1.2.8.RELEASE\spring-data-keyvalue-1.2.8.RELEASE.jar;D:\repository\org\springframework\data\spring-data-commons\1.13.8.RELEASE\spring-data-commons-1.13.8.RELEASE.jar;D:\repository\org\springframework\spring-oxm\4.3.12.RELEASE\spring-oxm-4.3.12.RELEASE.jar;D:\repository\org\springframework\spring-context-support\4.3.12.RELEASE\spring-context-support-4.3.12.RELEASE.jar;D:\repository\org\slf4j\jcl-over-slf4j\1.7.25\jcl-over-slf4j-1.7.25.jar;D:\repository\redis\clients\jedis\2.9.0\jedis-2.9.0.jar;D:\repository\com\google\code\gson\gson\2.8.2\gson-2.8.2.jar;D:\repository\com\google\guava\guava\19.0\guava-19.0.jar;D:\repository\net\sf\ezmorph\ezmorph\1.0.6\ezmorph-1.0.6.jar;D:\repository\commons-lang\commons-lang\2.3\commons-lang-2.3.jar;D:\repository\net\sf\json-lib\json-lib\2.4\json-lib-2.4-jdk15.jar;D:\repository\com\sinoservices\jlt-job-starter\1.0-SNAPSHOT\jlt-job-starter-1.0-20180829.015309-28.jar;D:\repository\com\xuxueli\xxl-job-core\1.8.2\xxl-job-core-1.8.2.jar;D:\repository\javax\servlet\jsp\jsp-api\2.2\jsp-api-2.2.jar;D:\repository\org\eclipse\jetty\jetty-server\9.4.7.v20170914\jetty-server-9.4.7.v20170914.jar;D:\repository\org\eclipse\jetty\jetty-http\9.4.7.v20170914\jetty-http-9.4.7.v20170914.jar;D:\repository\org\eclipse\jetty\jetty-util\9.4.7.v20170914\jetty-util-9.4.7.v20170914.jar;D:\repository\org\eclipse\jetty\jetty-io\9.4.7.v20170914\jetty-io-9.4.7.v20170914.jar;D:\repository\org\codehaus\jackson\jackson-mapper-asl\1.9.13\jackson-mapper-asl-1.9.13.jar;D:\repository\org\codehaus\jackson\jackson-core-asl\1.9.13\jackson-core-asl-1.9.13.jar;D:\repository\org\codehaus\groovy\groovy-all\2.4.12\groovy-all-2.4.12.jar;D:\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;D:\repository\com\jlt\jlt-ums-service-contract\4.11.2.20181130-SNAPSHOT\jlt-ums-service-contract-4.11.2.20181130-20181106.074438-3.jar;D:\repository\com\fasterxml\jackson\core\jackson-databind\2.8.10\jackson-databind-2.8.10.jar;D:\repository\com\fasterxml\jackson\core\jackson-annotations\2.8.0\jackson-annotations-2.8.0.jar;D:\repository\com\fasterxml\jackson\core\jackson-core\2.8.10\jackson-core-2.8.10.jar;D:\repository\com\jlt\jlt-dubbo-starter\4.11.2.20181130-SNAPSHOT\jlt-dubbo-starter-4.11.2.20181130-20181210.060241-150.jar;D:\repository\com\jlt\jlt-common-starter\4.1.0-SNAPSHOT\jlt-common-starter-4.1.0-20181119.073240-306.jar;D:\repository\com\sinoservices\3rd\jar\dubbo\2.8.2\dubbo-2.8.2.jar;D:\repository\com\sinoservices\3rd\jar\zkclient\0.4\zkclient-0.4.jar;D:\repository\com\caucho\hessian\4.0.51\hessian-4.0.51.jar;D:\repository\org\mortbay\jetty\jetty\6.1.26\jetty-6.1.26.jar;D:\repository\org\mortbay\jetty\jetty-util\6.1.26\jetty-util-6.1.26.jar;D:\repository\org\javassist\javassist\3.20.0-GA\javassist-3.20.0-GA.jar;D:\repository\org\apache\zookeeper\zookeeper\3.4.6\zookeeper-3.4.6.jar;D:\repository\jline\jline\0.9.94\jline-0.9.94.jar;D:\repository\io\netty\netty\3.7.0.Final\netty-3.7.0.Final.jar;D:\repository\org\apache\curator\curator-framework\4.0.1\curator-framework-4.0.1.jar;D:\repository\org\apache\curator\curator-client\4.0.1\curator-client-4.0.1.jar;D:\repository\org\jboss\netty\netty\3.6.4.Final\netty-3.6.4.Final.jar;D:\repository\io\netty\netty-all\4.1.31.Final\netty-all-4.1.31.Final.jar;D:\repository\com\jlt\jlt-mybatis-starter\4.11.2.20181130-SNAPSHOT\jlt-mybatis-starter-4.11.2.20181130-20181210.060239-153.jar;D:\repository\org\springframework\spring-context\4.3.12.RELEASE\spring-context-4.3.12.RELEASE.jar;D:\repository\org\springframework\spring-beans\4.3.12.RELEASE\spring-beans-4.3.12.RELEASE.jar;D:\repository\org\springframework\spring-expression\4.3.12.RELEASE\spring-expression-4.3.12.RELEASE.jar;D:\repository\org\springframework\spring-web\4.3.12.RELEASE\spring-web-4.3.12.RELEASE.jar;D:\repository\org\springframework\spring-tx\4.3.12.RELEASE\spring-tx-4.3.12.RELEASE.jar;D:\repository\com\alibaba\druid\1.1.5\druid-1.1.5.jar;D:\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar;D:\repository\com\h2database\h2\1.4.182\h2-1.4.182.jar;D:\repository\org\apache\commons\commons-lang3\3.4\commons-lang3-3.4.jar;D:\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;D:\Program Files\JetBrains\IntelliJ IDEA 2018.2.6\lib\idea_rt.jar;C:\Users\Billy.Zhang\.IntelliJIdea2018.2\system\captureAgent\debugger-agent.jar
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.library.path=C:\Program Files\Java\jdk1.8.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\UCRT\;C:\Program Files\Intel\UCRT\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\apache-maven-3.5.3\bin;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_25\bin;d:\Program Files\Git\cmd;D:\Program Files\TortoiseGit\bin;D:\Program Files\TortoiseSVN\bin;;d:\Program Files\Microsoft VS Code\bin;C:\Users\Billy.Zhang\AppData\Roaming\npm;.
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.io.tmpdir=C:\Users\Billy.Zhang\AppData\Local\Temp\
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:java.compiler=<NA>
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:os.name=Windows 7
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:os.arch=amd64
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:os.version=6.1
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:user.name=Billy.Zhang
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:user.home=C:\Users\Billy.Zhang
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Client environment:user.dir=D:\20181231\jlt-datasync-GY
+15:30:28 INFO  [main] org.apache.zookeeper.ZooKeeper - Initiating client connection, connectString=192.168.3.163:2181 sessionTimeout=30000 watcher=org.I0Itec.zkclient.ZkClient@3b77940f
+15:30:28 INFO  [main-SendThread(192.168.3.163:2181)] org.apache.zookeeper.ClientCnxn - Opening socket connection to server 192.168.3.163/192.168.3.163:2181. Will not attempt to authenticate using SASL (unknown error)
+15:30:28 INFO  [main-SendThread(192.168.3.163:2181)] org.apache.zookeeper.ClientCnxn - Socket connection established to 192.168.3.163/192.168.3.163:2181, initiating session
+15:30:28 INFO  [main-SendThread(192.168.3.163:2181)] org.apache.zookeeper.ClientCnxn - Session establishment complete on server 192.168.3.163/192.168.3.163:2181, sessionid = 0x1662994b3bc03de, negotiated timeout = 30000
+15:30:28 INFO  [main-EventThread] org.I0Itec.zkclient.ZkClient - zookeeper state changed (SyncConnected)
+15:30:28 INFO  [main] c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Register: consumer://173.1.254.163/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=consumers&check=false&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429, dubbo version: 2.8.1, current host: 173.1.254.163
+15:30:28 INFO  [main] c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Subscribe: consumer://173.1.254.163/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=providers,configurators,routers&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429, dubbo version: 2.8.1, current host: 173.1.254.163
+15:30:28 INFO  [main] c.a.d.r.zookeeper.ZookeeperRegistry -  [DUBBO] Notify urls for subscribe url consumer://173.1.254.163/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=providers,configurators,routers&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429, urls: [hessian://192.168.3.163:30907/com.jlt.ums.facade.message.UmsMessageFacade?anyhost=true&application=jlt-ums&default.delay=-1&default.retries=0&default.timeout=-1&delay=-1&dubbo=2.8.1&generic=false&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,countIsReadByOrgId,publishMessage,insert,updateMsgIsRead,deleteByIds,countIsRead&pid=3753&revision=4.11.2.20181130-SNAPSHOT&side=provider&timestamp=1544499035956, empty://173.1.254.163/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=configurators&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429, empty://173.1.254.163/com.jlt.ums.facade.message.UmsMessageFacade?application=jlt-datasync-gy&category=routers&default.check=false&default.retries=0&default.timeout=-1&dubbo=2.8.1&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429], dubbo version: 2.8.1, current host: 173.1.254.163
+15:30:28 INFO  [main] c.a.dubbo.config.AbstractConfig -  [DUBBO] Refer dubbo service com.jlt.ums.facade.message.UmsMessageFacade from url zookeeper://192.168.3.163:2181/com.alibaba.dubbo.registry.RegistryService?anyhost=true&application=jlt-datasync-gy&check=false&default.check=false&default.delay=-1&default.retries=0&default.timeout=-1&delay=-1&dubbo=2.8.1&generic=false&interface=com.jlt.ums.facade.message.UmsMessageFacade&methods=getPageByCondition,insertByTemplate,getById,batchInsert,insert,countIsReadByOrgId,publishMessage,updateMsgIsRead,deleteByIds,countIsRead&pid=6260&revision=4.11.2.20181130-SNAPSHOT&side=consumer&timestamp=1544599828429, dubbo version: 2.8.1, current host: 173.1.254.163
+15:30:31 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService  'taskExecutor'
+15:30:32 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@34f22f9d: startup date [Wed Dec 12 15:30:22 CST 2018]; root of context hierarchy
+15:30:32 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/dataReceive/receive],methods=[POST]}" onto public com.jlt.common.util.ApiResultMessage com.jlt.datasync.controllers.DataReceiveController.receive(com.jlt.datasync.dto.DataTransferDto)
+15:30:32 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+15:30:32 INFO  [main] o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+15:30:32 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:32 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:32 INFO  [main] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Detected @ExceptionHandler methods in exceptionHandlingControllerAdvice
+15:30:32 INFO  [main] o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+15:30:33 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService  'threadPoolTaskExecutor'
+15:30:33 INFO  [main] o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService  'asyncTaskExecutor'
+15:30:33 INFO  [main] c.s.minima.job.JobStartConfiguration - xxl-job config init.
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy-jlt:datasync, jobHandler:com.jlt.datasync.job.DataSyncJob@37d81587
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:alertNoticeHandle, jobHandler:com.jlt.datasync.timer.GyAlertNoticeHandleJobTask@400e741
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:dispatchcancel, jobHandler:com.jlt.datasync.timer.GyDispatchCancleHandleJobTask@20db19ff
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:dispatchorder, jobHandler:com.jlt.datasync.timer.GyDispatchOrderHandleJobTask@2fb70301
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:waybillexceptionhandle, jobHandler:com.jlt.datasync.timer.GyEtWaybillExceptionHandleJobTask@6ba08a09
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:requireTime, jobHandler:com.jlt.datasync.timer.GyRequireTimeHandleJobTask@320e179f
+15:30:33 INFO  [main] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job register jobhandler success, name:gy:returnprescriptionhandle, jobHandler:com.jlt.datasync.timer.GyReturnRescriptionHandleJobTask@285c63cf
+15:30:33 INFO  [Thread-28] org.eclipse.jetty.util.log - Logging initialized @13736ms to org.eclipse.jetty.util.log.Slf4jLog
+15:30:33 INFO  [Thread-28] org.eclipse.jetty.server.Server - jetty-9.4.7.v20170914
+15:30:33 INFO  [Thread-28] o.e.jetty.server.AbstractConnector - Started ServerConnector@7cf8192b{HTTP/1.1,[http/1.1]}{0.0.0.0:9998}
+15:30:33 INFO  [Thread-28] org.eclipse.jetty.server.Server - Started @13816ms
+15:30:33 INFO  [Thread-28] c.x.j.c.r.n.jetty.server.JettyServer - >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+15:30:33 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'dataSource' has been autodetected for JMX exposure
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'wallConfig' has been autodetected for JMX exposure
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'wallFilter' has been autodetected for JMX exposure
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Bean with name 'Slf4jLogFilter' has been autodetected for JMX exposure
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'wallConfig': registering with JMX server as MBean [com.alibaba.druid.wall:name=wallConfig,type=WallConfig]
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'wallFilter': registering with JMX server as MBean [com.alibaba.druid.wall:name=wallFilter,type=WallFilter]
+15:30:35 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Located MBean 'Slf4jLogFilter': registering with JMX server as MBean [com.alibaba.druid.filter.logging:name=Slf4jLogFilter,type=Slf4jLogFilter]
+15:30:35 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+15:30:35 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+15:30:35 INFO  [main] o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+15:30:35 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8081 (http)
+15:30:35 INFO  [main] c.jlt.startup.DataSyncWebApplication - Started DataSyncWebApplication in 13.94 seconds (JVM running for 16.086)
+15:31:03 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:31:14 INFO  [pool-2-thread-4] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job regist JobThread success, jobId:24, handler:com.jlt.datasync.timer.GyEtWaybillExceptionHandleJobTask@6ba08a09
+15:31:14 WARN  [Thread-43] xxl-job logger - [2018-12-12/929969.log]: 2018-12-12 15:31:14 [com.xxl.job.core.thread.JobThread]-[run]-[117]-[Thread-43] <br>----------- xxl-job job execute start -----------<br>----------- Params:null
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行预警，定时任务
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 获取运单，日期：(2018-11-27 00:00:00=>2018-12-12 23:59:59)，获取记录数：26
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000072]，已回单报警过，直接返回
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000072]，已返单报警过，直接返回
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000073]，已返单报警过，直接返回
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000021]，已回单报警过，直接返回
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000021]，已返单报警过，直接返回
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:14 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000055]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000022]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000022]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000023]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000023]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000040]，新增回单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000040]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000024]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000024]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181010000046]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000002]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000002]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000031]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000031]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000018]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000013]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000013]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000018]，新增回单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000018]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000041]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000041]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000027]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000027]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000029]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000029]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000011]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000011]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000012]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000012]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000028]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000028]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000030]，已回单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000030]，已返单报警过，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000007]，新增回单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000007]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000052]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000052]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000038]，新增返单超时异常
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000034]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000034]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000010]，无要求回单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000010]，无要求返单时间，直接返回
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:31:15 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:31:34 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:31:37 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 新增消息数：10
+15:31:37 INFO  [Thread-43] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 预警定时任务，执行成功
+15:31:37 WARN  [Thread-43] xxl-job logger - [2018-12-12/929969.log]: 2018-12-12 15:31:37 [com.xxl.job.core.thread.JobThread]-[run]-[124]-[Thread-43] <br>----------- xxl-job job execute end(finish) -----------<br>----------- ReturnT:ReturnT [code=200, msg=null, content=null]
+15:31:37 INFO  [Thread-31] c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job callback success, callbackParamList:[HandleCallbackParam{logId=929969, executeResult=ReturnT [code=200, msg=null, content=null]}], callbackResult:ReturnT [code=200, msg=null, content=null]
+15:32:04 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:32:34 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:33:04 INFO  [Thread-30] c.x.j.c.t.ExecutorRegistryThread - >>>>>>>>>>> xxl-job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='jlt-datasync-web-gy', registryValue='173.1.254.163:9998'}, registryResult:ReturnT [code=200, msg=null, content=null]
+15:33:10 INFO  [Thread-43] com.xxl.job.core.thread.JobThread - >>>>>>>>>>>> xxl-job JobThread stoped, hashCode:Thread[Thread-43,5,main]
+15:33:15 INFO  [pool-2-thread-1] c.x.job.core.executor.XxlJobExecutor - >>>>>>>>>>> xxl-job regist JobThread success, jobId:24, handler:com.jlt.datasync.timer.GyEtWaybillExceptionHandleJobTask@6ba08a09
+15:33:15 WARN  [Thread-45] xxl-job logger - [2018-12-12/929987.log]: 2018-12-12 15:33:15 [com.xxl.job.core.thread.JobThread]-[run]-[117]-[Thread-45] <br>----------- xxl-job job execute start -----------<br>----------- Params:null
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行预警，定时任务
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 获取运单，日期：(2018-11-27 00:00:00=>2018-12-12 23:59:59)，获取记录数：26
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000072]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000072]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000073]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000021]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000021]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000055]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000022]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000022]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000023]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000023]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000040]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000040]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000024]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000024]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181010000046]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000002]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000002]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000031]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000031]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000018]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000013]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000013]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000018]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000018]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000041]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000041]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000027]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000027]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000029]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000029]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000011]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000011]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000012]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181211000012]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000028]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000028]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000030]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181018000030]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000007]，已回单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181017000007]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000052]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000052]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000038]，已返单报警过，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000034]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181013000034]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行回单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000010]，无要求回单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行返单时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 运单：[SO20181210000010]，无要求返单时间，直接返回
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行退货时效预报警
+15:33:15 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 开始执行温度计返回时效预报警
+15:33:19 INFO  [Thread-45] c.j.d.t.GyEtWaybillExceptionHandleJobTask - 预警定时任务，执行成功
+15:33:19 WARN  [Thread-45] xxl-job logger - [2018-12-12/929987.log]: 2018-12-12 15:33:19 [com.xxl.job.core.thread.JobThread]-[run]-[124]-[Thread-45] <br>----------- xxl-job job execute end(finish) -----------<br>----------- ReturnT:ReturnT [code=200, msg=null, content=null]
+15:33:19 INFO  [Thread-31] c.x.j.c.thread.TriggerCallbackThread - >>>>>>>>>>> xxl-job callback success, callbackParamList:[HandleCallbackParam{logId=929987, executeResult=ReturnT [code=200, msg=null, content=null]}], callbackResult:ReturnT [code=200, msg=null, content=null]

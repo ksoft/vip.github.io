@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jlt.datasync.mapper.saas.HandleWayBillMapper">
+    <resultMap type="com.jlt.datasync.domain.HandleWayBill" id="wayBillModelResultMap">
+        <result property="tenantId" column="tenant_id"/>
+        <result property="owbPmCode" column="OWB_PM_CODE"/>
+        <result property="owbWayBillNo" column="OWB_WAY_BILL_NO"/>
+        <result property="owbEcNo" column="OWB_EC_NO"/>
+        <result property="eloNo" column="elo_no"/>
+        <result property="exWayBillNo" column="EX_WAY_BILL_NO"/>
+        <result property="exEcNo" column="EX_EC_NO"/>
+        <result property="waybillStatus" column="waybill_status"/>
+        <result property="owbIsSignException" column="OWB_IS_SIGN_EXCEPTION"/>
+        <result property="owbShipperId" column="OWB_SHIPPER_ID"/>
+        <result property="owbShipperName" column="OWB_SHIPPER_NAME"/>
+        <result property="owbOfficeId" column="OWB_OFFICE_ID"/>
+        <result property="owbOfficeName" column="OWB_OFFICE_NAME"/>
+        <result property="owbCarNo" column="OWB_CAR_NO"/>
+        <result property="vehicleType" column="vehicle_type"/>
+        <result property="owbDriverName" column="OWB_DRIVER_NAME"/>
+        <result property="owbDriverPhone" column="OWB_DRIVER_PHONE"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="owbHasApp" column="OWB_HAS_APP"/>
+        <result property="owbHasGps" column="OWB_HAS_GPS"/>
+        <result property="owbHasTemperature" column="OWB_HAS_TEMPERATURE"/>
+        <result property="owbHasDampness" column="OWB_HAS_DAMPNESS"/>
+        <result property="waybillException" column="waybill_exception"/>
+        <result property="hasReceipt" column="has_receipt"/>
+        <result property="trackOrderHandleFlag" column="TRACK_ORDER_HANDLE_FLAG"/>
+        <result property="returnTemperature" column="RETURN_TEMPERATURE"/>
+        <result property="returnReceipt" column="RETURN_RECEIPT"/>
+        <result property="planArrivalTime" column="PLAN_ARRIVAL_TIME"/>
+        <result property="signTime" column="SIGN_TIME"/>
+        <result property="shipTime" column="SHIP_TIME"/>
+        <result property="pickupTime" column="pickup_time"/>
+        <result property="pickupArriveTime" column="pickup_arrive_time"/>
+        <result property="estimatedUploadTime" column="estimated_upload_time"/>
+        <result property="expectedOriginalReturnTime" column="expected_original_return_time"/>
+        <result property="requireDeliveryTime" column="required_delivery_time"/>
+        <result property="requiredArrivalTime" column="required_arrival_time"/>
+        <result property="actReceiptTime" column="act_receipt_time"/>
+        <result property="actReturnTime" column="act_return_time"/>
+        <result property="dispatchTime" column="dispatch_time"/>
+        <result property="operationType" column="operation_type"/>
+        <result property="operationTypeName" column="operation_type_name"/>
+        <result property="operationTime" column="operation_time"/>
+        <result property="planMileage" column="plan_mileage"/>
+        <result property="owbdPmCode" column="OWBD_PM_CODE"/>
+        <result property="destinationAreaName" column="destination_area_name"/>
+        <result property="destinationCityName" column="destination_city_name"/>
+        <result property="destinationProvinceName" column="destination_province_name"/>
+        <result property="originAreaName" column="origin_area_name"/>
+        <result property="originCityName" column="origin_city_name"/>
+        <result property="originProvinceName" column="origin_province_name"/>
+        <result property="gyTransportModel" column="gy_transport_model"/>
+        <result property="isPickupEarlyWarning" column="is_pickup_early_warning"/>
+        <result property="isPickupAlarm" column="is_pickup_alarm"/>
+        <result property="isArrivalEarlyWarning" column="is_arrival_early_warning"/>
+        <result property="isArrivalAlarm" column="is_arrival_alarm"/>
+        <result property="isReceiptEarlyWarning" column="is_receipt_early_warning"/>
+        <result property="isReceiptAlarm" column="is_receipt_alarm"/>
+        <result property="isReturnEarlyWarning" column="is_return_early_warning"/>
+        <result property="isReturnAlarm" column="is_return_alarm"/>
+        <result property="gyRequireArrivalTime" column="gy_require_arrival_time"/>
+        <result property="gyRequireReturnTime" column="gy_require_return_time"/>
+        <result property="gyRequireReceiptUploadTime" column="gy_require_receipt_upload_time"/>
+        <result property="gyRequireReceiptReturnTime" column="gy_require_receipt_return_time"/>
+        <result property="gyRequireThermometerReturnTime" column="gy_require_thermometer_return_time"/>
+        <result property="consigneeId" column="consignee_id"/>
+        <result property="consigneeName" column="consignee_name"/>
+        <result property="transportType" column="transport_type"/>
+        <result property="transportMode" column="transport_mode"/>
+        <result property="predictArrivalTime" column="predict_arrival_time"/>
+    </resultMap>
+
+
+    <select id="getWayBillWithByCondition" resultMap="wayBillModelResultMap"
+            parameterType="com.jlt.datasync.condition.HandleWayBillCondition">
+        SELECT
+        INFO.tenant_id,
+        INFO.waybill_no OWB_WAY_BILL_NO,
+        INFO.elo_no,
+        INFO.dispatch_no OWB_EC_NO,
+        INFO.ex_waybill_no EX_WAY_BILL_NO,
+        INFO.ex_dispatch_no EX_EC_NO,
+        INFO.waybill_status,
+        INFO.shipper_id OWB_SHIPPER_ID,
+        INFO.shipper_name OWB_SHIPPER_NAME,
+        INFO.consignee_id,
+        INFO.consignee_name,
+        INFO.company_id OWB_OFFICE_ID,
+        INFO.company_name OWB_OFFICE_NAME,
+        INFO.vehicle_number OWB_CAR_NO,
+        INFO.vehicle_type,
+        INFO.main_driver_name OWB_DRIVER_NAME,
+        INFO.main_driver_phone OWB_DRIVER_PHONE,
+        DATE_FORMAT(INFO.create_time, '%Y-%m-%d %H:%i:%s') CREATE_TIME,
+        INFO.has_app OWB_HAS_APP,
+        INFO.has_gps OWB_HAS_GPS,
+        INFO.has_temperature OWB_HAS_TEMPERATURE,
+        INFO.has_dampness OWB_HAS_DAMPNESS,
+        INFO.has_exception OWB_HAS_EXCEPTION,
+        INFO.has_receipt,
+        INFO.transport_type,
+        INFO.is_pickup_early_warning,
+        INFO.is_pickup_alarm,
+        INFO.is_arrival_early_warning,
+        INFO.is_arrival_alarm,
+        INFO.is_receipt_early_warning,
+        INFO.is_receipt_alarm,
+        INFO.is_return_early_warning,
+        INFO.is_return_alarm,
+        INFO.transport_mode,
+        DETAIL.gy_transport_model,
+        DETAIL.RETURN_TEMPERATURE,
+        DETAIL.RETURN_RECEIPT,
+        DETAIL.TRACK_ORDER_HANDLE_FLAG,
+        DETAIL.plan_mileage,
+        DETAIL.dispatch_time,
+        DATE_FORMAT(DETAIL.SIGN_TIME, '%Y-%m-%d %H:%i:%s') SIGN_TIME,
+        DATE_FORMAT(DETAIL.arrival_time, '%Y-%m-%d %H:%i:%s') SHIP_TIME,
+        DATE_FORMAT(INFO.required_delivery_time, '%Y-%m-%d %H:%i:%s') required_delivery_time,
+        DATE_FORMAT(INFO.required_arrival_time, '%Y-%m-%d %H:%i:%s') required_arrival_time,
+        DATE_FORMAT(DETAIL.act_receipt_time, '%Y-%m-%d %H:%i:%s') act_receipt_time,
+        DATE_FORMAT(DETAIL.act_return_time, '%Y-%m-%d %H:%i:%s') act_return_time,
+        DATE_FORMAT(DETAIL.pickup_time, '%Y-%m-%d %H:%i:%s') pickup_time,
+        DATE_FORMAT(DETAIL.pickup_arrive_time, '%Y-%m-%d %H:%i:%s') pickup_arrive_time,
+        DATE_FORMAT(DETAIL.estimated_upload_time, '%Y-%m-%d %H:%i:%s') estimated_upload_time,
+        DATE_FORMAT(DETAIL.expected_original_return_time, '%Y-%m-%d %H:%i:%s') expected_original_return_time,
+        DATE_FORMAT(DETAIL.gy_require_arrival_time, '%Y-%m-%d %H:%i:%s') gy_require_arrival_time,
+        DATE_FORMAT(DETAIL.gy_require_return_time, '%Y-%m-%d %H:%i:%s') gy_require_return_time,
+        DATE_FORMAT(DETAIL.gy_require_receipt_upload_time, '%Y-%m-%d %H:%i:%s') gy_require_receipt_upload_time,
+        DATE_FORMAT(DETAIL.gy_require_receipt_return_time, '%Y-%m-%d %H:%i:%s') gy_require_receipt_return_time,
+        DATE_FORMAT(DETAIL.gy_require_thermometer_return_time, '%Y-%m-%d %H:%i:%s') gy_require_thermometer_return_time,
+        DATE_FORMAT(mil.predict_arrival_time, '%Y-%m-%d %H:%i:%s') predict_arrival_time
+        FROM et_waybill_info INFO
+        LEFT JOIN et_waybill_info_ext DETAIL ON DETAIL.waybill_no = INFO.waybill_no
+        LEFT JOIN et_waybill_mileage mil on INFO.waybill_no=mil.waybill_no
+        WHERE 1=1
+        <if test="startTime!=null and startTime!=''">
+            AND (DATE_FORMAT(INFO.CREATE_TIME,'%Y-%m-%d %H:%i:%s') &gt;= #{startTime} OR DATE_FORMAT(INFO.MODIFY_TIME,'%Y-%m-%d %H:%i:%s')
+            &gt;= #{startTime})
+        </if>
+        <if test="endTime!=null and endTime!=''">
+            AND (DATE_FORMAT(INFO.CREATE_TIME,'%Y-%m-%d %H:%i:%s') &lt;= #{endTime} OR DATE_FORMAT(INFO.MODIFY_TIME,'%Y-%m-%d %H:%i:%s')
+            &lt;= #{endTime})
+        </if>
+    </select>
+    <select id="getWayBillEventByCondition" resultMap="wayBillModelResultMap"
+            parameterType="com.jlt.datasync.condition.HandleWayBillCondition">
+        SELECT
+        tenant_id,waybill_no OWB_WAY_BILL_NO,operation_type,operation_type_name,operation_time
+        FROM
+        et_waybill_event_info
+        WHERE 1=1
+        <if test="waybillNos!=null and waybillNos.size>0">
+            AND waybill_no IN
+            <foreach collection="waybillNos" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="operationTypes!=null and operationTypes.size>0">
+            AND operation_type IN
+            <foreach collection="operationTypes" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <select id="getCanceledWaybill" resultMap="wayBillModelResultMap" parameterType="com.jlt.datasync.condition.HandleWayBillCondition">
+        SELECT
+        INFO.waybill_no OWB_WAY_BILL_NO,
+        INFO.elo_no,
+        IFNULL(INFO.ex_dispatch_no,INFO.dispatch_no) OWB_EC_NO
+        FROM
+        et_waybill_info INFO
+        WHERE 1=1
+        <if test="eloNos != null and eloNos.size > 0">
+            AND INFO.elo_no IN
+            <foreach collection="eloNos" index="index" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+    </select>
+
+    <update id="batchUpdateWaybillInfoExt" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";">
+            UPDATE
+            et_waybill_info_ext
+            SET
+            <if test="item.trackEventNode != null and item.trackEventNode != ''">track_event_node = #{item.trackEventNode},</if>
+            <if test="item.gyWaybillStatus != null and item.gyWaybillStatus != ''">gy_waybill_status = #{item.gyWaybillStatus},</if>
+            <if test="item.gyRequireArrivalTime != null">gy_require_arrival_time = #{item.gyRequireArrivalTime},</if>
+            <if test="item.gyRequireReturnTime != null">gy_require_return_time = #{item.gyRequireReturnTime},</if>
+            <if test="item.gyRequireReceiptUploadTime != null">gy_require_receipt_upload_time = #{item.gyRequireReceiptUploadTime},</if>
+            <if test="item.gyRequireReceiptReturnTime != null">gy_require_receipt_return_time = #{item.gyRequireReceiptReturnTime},</if>
+            <if test="item.gyRequireThermometerReturnTime != null">
+                gy_require_thermometer_return_time = #{item.gyRequireThermometerReturnTime},
+            </if>
+            MODIFY_TIME = SYSDATE()
+            WHERE
+            waybill_no = #{item.owbWayBillNo}
+        </foreach>
+    </update>
+
+    <update id="batchUpdateWaybillInfo" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";">
+            UPDATE
+            et_waybill_info
+            SET
+            <if test="item.waybillException != null and item.waybillException != ''">
+                waybill_exception = #{item.waybillException},
+            </if>
+            <if test="item.isPickupEarlyWarning != null and item.isPickupEarlyWarning != ''">
+                is_pickup_early_warning = #{item.isPickupEarlyWarning},
+            </if>
+            <if test="item.isPickupAlarm != null and item.isPickupAlarm != ''">
+                is_pickup_alarm = #{item.isPickupAlarm},
+            </if>
+            <if test="item.isArrivalEarlyWarning != null and item.isArrivalEarlyWarning != ''">
+                is_arrival_early_warning = #{item.isArrivalEarlyWarning},
+            </if>
+            <if test="item.isArrivalAlarm != null and item.isArrivalAlarm != ''">
+                is_arrival_alarm = #{item.isArrivalAlarm},
+            </if>
+            <if test="item.isReceiptEarlyWarning != null and item.isReceiptEarlyWarning != ''">
+                is_receipt_early_warning = #{item.isReceiptEarlyWarning},
+            </if>
+            <if test="item.isReceiptAlarm != null and item.isReceiptAlarm != ''">
+                is_receipt_alarm = #{item.isReceiptAlarm},
+            </if>
+            <if test="item.isReturnEarlyWarning != null and item.isReturnEarlyWarning != ''">
+                is_return_early_warning = #{item.isReturnEarlyWarning},
+            </if>
+            <if test="item.isReturnAlarm != null and item.isReturnAlarm != ''">
+                is_return_alarm = #{item.isReturnAlarm},
+            </if>
+            MODIFY_TIME = SYSDATE()
+            WHERE
+            waybill_no = #{item.owbWayBillNo}
+        </foreach>
+    </update>
+
+    <update id="batchUpdateHasException">
+        UPDATE 
+        	et_waybill_info a
+        set a.has_exception=(
+          select GROUP_CONCAT(distinct exception_type_name) from et_waybill_exception b where b.waybill_no = a.waybill_no
+        ),a.is_exception = (
+          select (case when count(1)>0 then 0 else 1 end) from et_waybill_exception c where c.waybill_no = a.waybill_no and c.is_exception = 0
+        )
+    </update>
+
+    <update id="batchUpdateByEloNo" parameterType="java.util.List">
+        UPDATE
+        et_waybill_info
+        SET
+        rec_status = 1,
+        modify_name = '定时器',
+        modify_time = now()
+        WHERE
+        elo_no IN
+        <foreach collection="list" item="item" separator="," index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
+
+    <select id="getUnSetRequireTimeWaybill" resultMap="wayBillModelResultMap"
+            parameterType="com.jlt.datasync.condition.HandleWayBillCondition">
+        SELECT
+        info.tenant_id,
+        info.waybill_no owb_way_bill_no,
+        info.dispatch_no owb_ec_no,
+        info.ex_waybill_no ex_way_bill_no,
+        info.ex_dispatch_no ex_ec_no,
+        info.shipper_id owb_shipper_id,
+        info.shipper_name owb_shipper_name,
+        info.consignee_id,
+        info.consignee_name,
+        info.company_id owb_office_id,
+        info.company_name owb_office_name,
+        info.origin_province_name,
+        info.origin_city_name,
+        info.destination_province_name,
+        info.destination_city_name,
+        case detail.gy_transport_method when '公路' then 10 when '铁路' then 20 when '海运' then 30 when '空运' then 40 end transport_type,
+        info.transport_mode,
+        DATE_FORMAT(detail.pickup_time, '%Y-%m-%d %H:%i:%s') pickup_time,
+        DATE_FORMAT(detail.sign_time, '%Y-%m-%d %H:%i:%s') sign_time
+        FROM et_waybill_info info
+        LEFT JOIN et_waybill_info_ext detail ON detail.waybill_no = info.waybill_no
+        WHERE 1=1 AND info.REC_STATUS = 0
+        AND (detail.pickup_time is not null or detail.sign_time is not null)
+        AND (detail.gy_require_arrival_time is null or detail.gy_require_return_time is null or detail.gy_require_receipt_upload_time is null or detail.gy_require_receipt_return_time is null or detail.gy_require_thermometer_return_time is null)
+        limit 200
+    </select>
+
+    <select id="getValidWaybill" resultType="int" parameterType="java.lang.String">
+        SELECT
+        count(1)
+        FROM
+        et_waybill_info
+        WHERE rec_status = 0
+        and (dispatch_no = #{dispatchNo} or ex_dispatch_no = #{dispatchNo})
+    </select>
+</mapper>

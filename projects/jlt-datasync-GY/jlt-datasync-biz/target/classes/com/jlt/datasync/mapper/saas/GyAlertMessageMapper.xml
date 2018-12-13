@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.GyAlertMessageMapper">
+	<resultMap type="com.jlt.datasync.dto.GyAlertMessageDto" id="gyAlertMessageModelResultMap">
+		<result property="id" column="ID"/>
+		<result property="tenantId" column="tenant_id"/>
+		<result property="owbEcNo" column="OWB_EC_NO"/>
+		<result property="exEcNo" column="EX_EC_NO"/>
+		<result property="alertMessage" column="ALERT_MESSAGE"/>
+		<result property="alertTime" column="ALERT_TIME"/>
+		<result property="handler" column="HANDLER"/>
+		<result property="handleView" column="HANDLE_VIEW"/>
+		<result property="handleTime" column="HANDLE_TIME"/>
+		<result property="remark" column="REMARK"/>
+		<result property="creator" column="creator"/>
+		<result property="createName" column="create_name"/>
+		<result property="createTime" column="create_time"/>
+		<result property="modifier" column="modifier"/>
+		<result property="modifyName" column="modify_name"/>
+		<result property="modifyTime" column="modify_time"/>
+	</resultMap>
+	<sql id="select">
+		<![CDATA[
+			SELECT
+					ID,
+					tenant_id,
+					OWB_EC_NO,
+					EX_EC_NO,
+					ALERT_MESSAGE,
+					DATE_FORMAT(ALERT_TIME, '%Y-%m-%d %H:%i') AS ALERT_TIME,
+					HANDLER,
+					DATE_FORMAT(HANDLE_TIME, '%Y-%m-%d %H:%i') AS HANDLE_TIME,
+					HANDLE_VIEW,
+					REMARK,
+					creator,
+					create_name,
+					DATE_FORMAT(create_time, '%Y-%m-%d %H:%i') AS create_time,
+					modifier,
+					modify_name,
+					DATE_FORMAT(modify_time, '%Y-%m-%d %H:%i') AS modify_time
+		]]>
+	</sql>
+
+	<sql id="findByExample">
+		WHERE 1=1
+		<if test="id!=null"> AND ID = #{id}</if>
+		<if test="tenantId!=null">AND ID = #{id}</if>
+		<if test="owbEcNo!=null and owbEcNo!=''">
+		AND (OWB_EC_NO LIKE CONCAT('%',#{owbEcNo},'%') OR EX_EC_NO LIKE CONCAT('%',#{owbEcNo},'%'))</if>
+		<if test="exEcNo!=null and exEcNo!=''"> AND (OWB_EC_NO LIKE CONCAT('%',#{exEcNo},'%') OR EX_EC_NO LIKE CONCAT('%',#{exEcNo},'%'))</if>
+		<if test="alertMessage!=null and alertMessage!=''"> AND ALERT_MESSAGE =#{alertMessage}</if>
+		<if test="alertTime!=null and alertTime!=''"> AND ALERT_TIME =#{alertTime}</if>
+		<if test="handleTime!=null and handleTime!=''"> AND HANDLE_TIME =#{handleTime}</if>
+		<if test="handler!=null and handler!=''"> AND HANDLER = #{handler}</if>
+		<if test="handleView!=null and handleView!=''"> AND HANDLE_VIEW = #{handleView}</if>
+		<if test="remark!=null and remark!=''"> AND REMARK =#{remark}</if>
+		<if test="modifyTime!=null and modifyTime!=''"> AND MODIFY_TIME  =#{modifyTime}</if>
+		<if test="modifier!=null and modifier!=''"> AND MODIFIER  =#{modifier}</if>
+		<if test="modifyName!=null and modifyName!=''"> AND MODIFY_NAME  LIKE CONCAT('%',#{modifyName},'%')</if>
+		<if test="creator!=null and creator!=''"> AND CREATOR  =#{creator}</if>
+		<if test="createName!=null and createName!=''"> AND CREATE_NAME  LIKE CONCAT('%',#{createName},'%')</if>
+		<if test="createTime!=null and createTime!=''"> AND DATE_FORMAT(CREATE_TIME,'%Y-%m-%d %H:%i') &gt;=#{createTime} </if>
+       <if test="isNeedHandle!=null"> AND HANDLE_TIME is null</if>
+
+	</sql>
+
+	<insert id="insert">
+		INSERT INTO GY_ALERT_MESSAGE (
+				ID,
+				tenant_id,
+                OWB_EC_NO,
+                EX_EC_NO,
+                ALERT_MESSAGE,
+                ALERT_TIME,
+                HANDLER,
+                HANDLE_TIME,
+                HANDLE_VIEW,
+                REMARK,
+				creator,
+				create_name,
+				create_time,
+				modifier,
+				modify_name,
+				modify_time
+		) VALUES (
+			   #{id},
+			   #{tenantId},
+			   #{owbEcNo},
+			   #{exEcNo},
+			   #{alertMessage},
+			   #{alertTime},
+			   #{handler},
+			   #{handleTime},
+			   #{handleView},
+			   #{remark},
+			   #{creator},
+			   #{createName},
+			   SYSDATE(),
+			   #{modifier},
+			   #{modifyName},
+			   #{modifyTime}
+		)
+	</insert>
+	<insert id="batchInsert" parameterType="java.util.List">
+		INSERT INTO GY_ALERT_MESSAGE (
+				ID,
+				tenant_id,
+                OWB_EC_NO,
+                EX_EC_NO,
+                ALERT_MESSAGE,
+                ALERT_TIME,
+                HANDLER,
+                HANDLE_TIME,
+                HANDLE_VIEW,
+                REMARK,
+				creator,
+				create_name,
+				create_time,
+				modifier,
+				modify_name,
+		modify_time
+		) VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			 (
+			   #{item.id},
+			#{item.tenantId},
+			   #{item.owbEcNo},
+			   #{item.exEcNo},
+			   #{item.alertMessage},
+			   #{item.alertTime},
+			   #{item.handler},
+			   #{item.handleTime},
+			   #{item.handleView},
+			   #{item.remark},
+			   #{item.creator},
+			   #{item.createName},
+			   SYSDATE(),
+			   #{item.modifier},
+			   #{item.modifyName},
+			#{item.modifyTime}
+			)
+		</foreach>
+	</insert>
+
+	<delete id="deleteByCondition" parameterType="com.jlt.datasync.condition.GyAlertMessageCondition">
+    	DELETE FROM GY_ALERT_MESSAGE 
+    	<include refid="findByExample"/>
+	</delete>
+</mapper>

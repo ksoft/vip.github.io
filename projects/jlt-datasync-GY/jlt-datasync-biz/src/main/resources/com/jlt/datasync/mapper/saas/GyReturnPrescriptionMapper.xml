@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.GyReturnPrescriptionMapper">
+	<resultMap type="com.jlt.datasync.dto.GyReturnPrescriptionDto" id="gyReturnPrescriptionModelResultMap">
+		<result property="id" column="ID"/>
+		<result property="provinceName" column="PROVINCE_NAME"/>
+		<result property="provinceId" column="PROVINCE_ID"/>
+		<result property="cityName" column="CITY_NAME"/>
+		<result property="cityId" column="CITY_ID"/>
+		<result property="returnPrescription" column="RETURN_PRESCRIPTION"/>
+		<result property="creator" column="CREATOR"/>
+		<result property="createName" column="CREATE_NAME"/>
+		<result property="createTime" column="create_time"/>
+		<result property="modifier" column="modifier"/>
+		<result property="modifyName" column="modify_name"/>
+		<result property="modifyTime" column="modify_time"/>
+	</resultMap>
+	<sql id="select">
+		<![CDATA[
+			SELECT 
+					ID,
+					CITY_NAME,
+					CITY_ID,
+					PROVINCE_NAME,	
+					PROVINCE_ID,
+					RETURN_PRESCRIPTION,
+					creator,
+					create_name,
+					create_time,
+					modifier,
+					modify_name,
+					modify_time
+		]]>
+	</sql>
+	
+	<sql id="count">
+		<![CDATA[
+	    	SELECT COUNT(1) 
+	  	]]>
+	</sql>
+	
+	<sql id="findByExample">
+		WHERE 1=1
+		<if test="id!=null"> AND ID = #{id}</if>
+		<if test="provinceName!=null and provinceName!=''"> AND PROVINCE_NAME =#{provinceName}</if>
+		<if test="provinceId!=null and provinceId!=''"> AND PROVINCE_ID =#{provinceId}</if>
+		<if test="cityName!=null and cityName!=''"> AND CITY_NAME =#{cityName}</if>
+		<if test="cityId!=null and cityId!=''"> AND CITY_ID = #{cityId}</if>
+		<if test="returnPrescription!=null"> AND RETURN_PRESCRIPTION LIKE CONCAT('%',#{returnPrescription},'%')</if>
+		<if test="modifyTime!=null and modifyTime!=''"> AND MODIFY_TIME  =#{modifyTime}</if>
+		<if test="modifier!=null and modifier!=''"> AND MODIFIER  =#{modifier}</if>
+		<if test="modifyName!=null and modifyName!=''"> AND MODIFY_NAME  LIKE CONCAT('%',#{modifyName},'%')</if>
+		<if test="creator!=null and creator!=''"> AND CREATOR  =#{creator}</if>
+		<if test="createName!=null and createName!=''"> AND CREATE_NAME  LIKE CONCAT('%',#{createName},'%')</if>
+		<if test="createTime!=null and createTime!=''"> AND DATE_FORMAT(CREATE_TIME,'%Y-%m-%d %H:%i') &gt;=#{createTime} </if>
+		<if test="areaLike!=null and areaLike!=''"> AND (PROVINCE_NAME LIKE CONCAT('%',#{areaLike},'%') or  CITY_NAME LIKE CONCAT('%',#{areaLike},'%'))</if>
+		<if test="ids!=null and ids.size!=0">
+         AND ID IN
+          <foreach collection="ids" item="item" separator="," index="index" open="(" close=")">
+              #{item}
+          </foreach>
+       </if>
+	</sql>
+	
+	<select id="findByCondition" resultMap="gyReturnPrescriptionModelResultMap" parameterType="com.jlt.datasync.condition.GyReturnPrescriptionCondition">
+		<include refid="select"/>
+		FROM  GY_RETURN_PRESCRIPTION
+		<include refid="findByExample"/>
+		ORDER BY create_time ASC
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO GY_RETURN_PRESCRIPTION (
+				ID,
+                PROVINCE_NAME,
+                PROVINCE_ID,
+                CITY_NAME,
+                CITY_ID,
+                RETURN_PRESCRIPTION,
+				creator,
+				create_name,
+				create_time,
+				modifier,
+				modify_name,
+				modify_time
+		) VALUES (
+			   #{id},
+			   #{provinceName},
+			   #{provinceId},
+			   #{cityName},
+			   #{cityId},
+			   #{returnPrescription},
+			   #{creator},
+			   #{createName},
+			   SYSDATE(),
+			   #{modifier},
+			   #{modifyName},
+			   #{modifyTime}
+		)
+	</insert>
+	
+	<update id="update">
+		UPDATE GY_RETURN_PRESCRIPTION SET
+				<if test="provinceName!=null and provinceName!=''"> PROVINCE_NAME = #{provinceName},</if>
+				<if test="provinceId!=null and provinceId!=''">  PROVINCE_ID = #{provinceId},</if>
+				<if test="cityName!=null and cityName!=''"> CITY_NAME = #{cityName},</if>
+				<if test="cityId!=null and cityId!=''"> CITY_ID = #{cityId},</if>	
+				<if test="returnPrescription!=null">RETURN_PRESCRIPTION = #{returnPrescription},</if>
+		        <if test="modifier!=null and modifier!=''">modifier = #{modifier},</if>
+				<if test="modifyName!=null and modifyName!=''">modify_name = #{modifyName},</if>
+				<if test="creator!=null and creator!=''"> creator = #{creator},</if>
+				<if test="createName!=null and createName!=''"> create_name = #{createName},</if>
+				<if test="createTime!=null and createTime!=''"> create_time = #{createTime},</if>
+				modify_time = SYSDATE()
+				WHERE ID =#{id}
+	</update>
+	<insert id="batchInsert" parameterType="java.util.List">
+		INSERT INTO GY_RETURN_PRESCRIPTION (
+				ID,
+                PROVINCE_NAME,
+                PROVINCE_ID,
+                CITY_NAME,
+                CITY_ID,
+                RETURN_PRESCRIPTION,
+				creator,
+				create_name,
+				create_time,
+				modifier,
+				modify_name,
+				modify_time
+		) VALUES
+		<foreach collection="list" item="item" index="index" separator=",">
+			 (
+			   #{item.id},
+			   #{item.provinceName},
+			   #{item.provinceId},
+			   #{item.cityName},
+			   #{item.cityId},
+			   #{item.returnPrescription},
+			   #{item.creator},
+			   #{item.createName},
+			   SYSDATE(),
+			   #{item.modifier},
+			   #{item.modifyName},
+			   #{item.modifyTime}
+			)
+		</foreach>
+	</insert>
+
+	<update id="batchUpdate" parameterType="java.util.List">
+	   <foreach collection="list" item="item" index="index" separator=";">
+	        UPDATE GY_RETURN_PRESCRIPTION SET
+				PROVINCE_NAME = #{item.provinceName},
+				PROVINCE_ID = #{item.provinceId},
+				CITY_ID = #{item.cityId},
+				CITY_NAME = #{item.cityName},
+				RETURN_PRESCRIPTION = #{item.returnPrescription},
+				modifier = #{item.modifier},
+				modify_name = #{item.modifyName},
+				modify_time = SYSDATE()
+				WHERE 1=1
+		   <if test="item.id!=null"> AND ID = #{item.id}</if>	
+	   </foreach>
+	</update>   
+			
+	<delete id="deleteByCondition" parameterType="com.jlt.datasync.condition.GyReturnPrescriptionCondition">
+    	DELETE FROM GY_RETURN_PRESCRIPTION 
+    	<include refid="findByExample"/>
+	</delete>
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.GyAlertNoticeSettingMapper">
+    <resultMap type="com.jlt.datasync.dto.GyAlertNoticeSettingDto" id="gyAlertNoticeSettingModelResultMap">
+        <result property="id" column="id"/>
+        <result property="prescriptionFrom" column="prescription_from"/>
+        <result property="prescriptionTo" column="prescription_to"/>
+        <result property="receiverName" column="receiver_name"/>
+        <result property="platformAccount" column="platform_account"/>
+        <result property="recStatus" column="rec_status"/>
+        <result property="recVer" column="rec_ver"/>
+        <result property="creator" column="creator"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modifyName" column="modify_name"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="departmentId" column="department_id"/>
+        <result property="tenantId" column="tenant_id"/>
+    </resultMap>
+
+    <sql id="select">
+        <![CDATA[
+
+			SELECT
+			a.id,
+            a.prescription_from,
+            a.prescription_to,
+            a.receiver_name,
+            a.platform_account,
+            a.rec_status,
+            a.rec_ver,
+            a.creator,
+            a.create_name,
+            a.create_time,
+            a.modifier,
+            a.modify_name,
+            a.modify_time,
+            a.department_id,
+            a.tenant_id
+
+        ]]>
+    </sql>
+
+    <sql id="findByExample">
+        WHERE 1=1 and a.rec_status = 0
+        <if test="tenantId!=null">AND a.tenant_id = #{tenantId}</if>
+        <if test="id!=null">AND a.ID = #{id}</if>
+        <if test="recStatus!=null">AND a.rec_status = #{recStatus}</if>
+        <if test="recVer!=null">AND a.rec_ver = #{recVer}</if>
+        <if test="creator!=null and creator!=''">AND a.creator = #{creator}</if>
+        <if test="createName!=null and createName!=''">AND a.create_name = #{createName}</if>
+        <if test="createTime!=null">AND a.create_time = #{createTime}</if>
+        <if test="modifier!=null and modifier!=''">AND a.modifier = #{modifier}</if>
+        <if test="modifyName!=null and modifyName!=''">AND a.modify_name = #{modifyName}</if>
+        <if test="modifyTime!=null">AND a.modify_time = #{modifyTime}</if>
+    </sql>
+    <select id="findList" resultMap="gyAlertNoticeSettingModelResultMap"
+            parameterType="com.jlt.datasync.condition.GyAlertNoticeSettingCondition">
+        <include refid="select"/>
+        FROM gy_alert_notice_setting a
+        inner join gy_user_related b on a.platform_account = b.USER_CODE
+        <include refid="findByExample"/>
+        order by a.prescription_from asc
+    </select>
+</mapper>

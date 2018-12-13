@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.GyThermometerHistoryMapper">
+    <resultMap type="com.jlt.datasync.domain.GyThermometerHistory" id="gyThermometerHistoryModelResultMap">
+        <result property="id" column="id"/>
+        <result property="waybillNo" column="waybill_no"/>
+        <result property="thermometerNo" column="thermometer_no"/>
+        <result property="mainDriverName" column="main_driver_name"/>
+        <result property="vehicleNumber" column="vehicle_number"/>
+        <result property="temperatureReceiptTime" column="temperature_receipt_time"/>
+        <result property="isThermometerEarlyWarning" column="is_thermometer_early_warning"/>
+        <result property="isThermometerAlarm" column="is_thermometer_alarm"/>
+        <result property="recStatus" column="rec_status"/>
+        <result property="recVer" column="rec_ver"/>
+        <result property="creator" column="creator"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modifyName" column="modify_name"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="departmentId" column="department_id"/>
+        <result property="tenantId" column="tenant_id"/>
+    </resultMap>
+
+    <sql id="select">
+        <![CDATA[
+
+
+
+
+
+			SELECT
+			id,
+            waybill_no,
+            thermometer_no,
+            main_driver_name,
+            vehicle_number,
+            DATE_FORMAT(temperature_receipt_time, '%Y-%m-%d %H:%i:%s') temperature_receipt_time,
+            is_thermometer_early_warning,
+            is_thermometer_alarm,
+            rec_status,
+            rec_ver,
+            creator,
+            create_name,
+            create_time,
+            modifier,
+            modify_name,
+            modify_time,
+            department_id,
+            tenant_id
+
+
+        ]]>
+    </sql>
+
+    <sql id="findByExample">
+        WHERE 1=1
+        <if test="id!=null">AND ID = #{id}</if>
+        <if test="tenantId!=null">AND tenant_id = #{tenantId}</if>
+        <if test="waybillNo!=null and waybillNo!=''">AND waybill_no = #{waybillNo}</if>
+        <if test="recStatus!=null">AND rec_status = #{recStatus}</if>
+        <if test="recVer!=null">AND rec_ver = #{recVer}</if>
+        <if test="creator!=null and creator!=''">AND creator = #{creator}</if>
+        <if test="createName!=null and createName!=''">AND create_name = #{createName}</if>
+        <if test="createTime!=null">AND create_time = #{createTime}</if>
+        <if test="modifier!=null and modifier!=''">AND modifier = #{modifier}</if>
+        <if test="modifyName!=null and modifyName!=''">AND modify_name = #{modifyName}</if>
+        <if test="modifyTime!=null">AND modify_time = #{modifyTime}</if>
+    </sql>
+    <select id="findList" resultMap="gyThermometerHistoryModelResultMap"
+            parameterType="com.jlt.datasync.condition.GyThermometerHistoryCondition">
+        <include refid="select"/>
+        FROM gy_thermometer_history
+        <include refid="findByExample"/>
+    </select>
+    <update id="batchUpdate" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";">
+            UPDATE
+            gy_thermometer_history
+            SET
+            <if test="item.isThermometerEarlyWarning != null and item.isThermometerEarlyWarning != ''">
+                is_thermometer_early_warning = #{item.isThermometerEarlyWarning},
+            </if>
+            <if test="item.isThermometerAlarm != null and item.isThermometerAlarm != ''">
+                is_thermometer_alarm = #{item.isThermometerAlarm},
+            </if>
+            MODIFY_TIME = SYSDATE()
+            WHERE
+            waybill_no = #{item.waybillNo}
+        </foreach>
+    </update>
+</mapper>

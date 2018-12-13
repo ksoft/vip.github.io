@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.saas.GyjlDispatchOrderMapper">
+    <resultMap type="com.jlt.datasync.domain.GyjlDispatchOrder" id="gyjlDispatchOrderModelResultMap">
+        <result property="id" column="id"/>
+        <result property="owbEcNo" column="owb_ec_no"/>
+        <result property="exEcNo" column="ex_ec_no"/>
+        <result property="owbCarNo" column="owb_car_no"/>
+        <result property="owbShipperId" column="owb_shipper_id"/>
+        <result property="owbShipperName" column="owb_shipper_name"/>
+        <result property="owbOfficeName" column="owb_office_name"/>
+        <result property="owbOfficeId" column="owb_office_Id"/>
+        <result property="dispatchTime" column="dispatch_time"/>
+        <result property="exceptionStatus" column="exception_status"/>
+        <result property="handleStatus" column="handle_status"/>
+        <result property="exceptionMessage" column="exception_message"/>
+        <result property="hasGps" column="has_gps"/>
+        <result property="hasTemperture" column="has_temperture"/>
+        <result property="trackStatus" column="track_status"/>
+        <result property="dispatchStatus" column="dispatch_status"/>
+        <result property="planMileage" column="plan_mileage"/>
+        <result property="actMileage" column="act_mileage"/>
+        <result property="returnTemperature" column="return_temperature"/>
+        <result property="returnReceipt" column="return_receipt"/>
+        <result property="dispatchProgress" column="dispatch_progress"/>
+        <result property="creator" column="creator"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modifyName" column="modify_name"/>
+        <result property="modifyTime" column="modify_time"/>
+        <result property="orgId" column="org_id"/>
+        <result property="owbDriverPhone" column="owb_driver_phone"/>
+        <result property="owbDriverName" column="owb_driver_name"/>
+        <result property="pmCode" column="PM_CODE"/>
+        <result property="name" column="NAME"/>
+        <result property="officeCode" column="OFFICE_CODE"/>
+
+    </resultMap>
+
+    <sql id="select">
+        <![CDATA[
+
+			SELECT
+					id,
+					owb_ec_no,
+					ex_ec_no,
+					owb_car_no,
+					owb_shipper_id,
+					owb_shipper_name,
+					owb_office_name,
+					owb_office_Id,
+					dispatch_time,
+					exception_status,
+					handle_status,
+					exception_message,
+					has_gps,
+					has_temperture,
+					track_status,
+					dispatch_status,
+					plan_mileage,
+					act_mileage,
+					return_temperature,
+					return_receipt,
+					dispatch_progress,
+					creator,
+					create_name,
+					create_time,
+					modifier,
+					modify_name,
+					modify_time,
+					org_id,
+					owb_driver_phone,
+					owb_driver_name
+
+        ]]>
+    </sql>
+
+    <select id="findByOwbEcNo" resultMap="gyjlDispatchOrderModelResultMap" parameterType="java.lang.String">
+        <include refid="select"/>
+        FROM  GY_DISPATCH_ORDER
+        WHERE OWB_EC_NO = #{owbEcNo}
+    </select>
+
+    <delete id="bacthDeleteByEcNo" parameterType="java.util.List">
+        DELETE FROM GY_DISPATCH_ORDER WHERE 1=1 AND OWB_EC_NO IN
+        <foreach collection="list" item="item" separator="," index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+    <update id="bacthUpdateByEcNo" parameterType="java.util.List">
+        UPDATE GY_DISPATCH_ORDER
+        SET rec_status = 1
+        WHERE OWB_EC_NO IN
+        <foreach collection="list" item="item" separator="," index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
+    <update id="batchUpdateWayBillDetail" parameterType="java.util.List">
+        UPDATE et_waybill_info_ext SET gy_background_caolor = 1 WHERE 1=1 AND waybill_no IN
+        <foreach collection="list" item="item" separator="," index="index" open="(" close=")">
+            #{item}
+        </foreach>
+    </update>
+    <insert id="batchInsert" parameterType="java.util.List">
+        INSERT INTO GY_DISPATCH_ORDER (
+        id,
+        tenant_id,
+        owb_ec_no,
+        elo_no,
+        ex_ec_no,
+        owb_car_no,
+        owb_shipper_id,
+        owb_shipper_name,
+        owb_office_name,
+        owb_office_Id,
+        dispatch_time,
+        exception_status,
+        handle_status,
+        exception_message,
+        has_gps,
+        has_temperture,
+        track_status,
+        dispatch_status,
+        plan_mileage,
+        act_mileage,
+        return_temperature,
+        return_receipt,
+        dispatch_progress,
+        creator,
+        create_name,
+        create_time,
+        modifier,
+        modify_name,
+        modify_time,
+        owb_driver_phone,
+        owb_driver_name
+        ) VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.id},
+            #{item.tenantId},
+            #{item.owbEcNo},
+            #{item.eloNo},
+            #{item.exEcNo},
+            #{item.owbCarNo},
+            #{item.owbShipperId},
+            #{item.owbShipperName},
+            #{item.owbOfficeName},
+            #{item.owbOfficeId},
+            #{item.dispatchTime},
+            #{item.exceptionStatus},
+            #{item.handleStatus},
+            #{item.exceptionMessage},
+            #{item.hasGps},
+            #{item.hasTemperture},
+            #{item.trackStatus},
+            #{item.dispatchStatus},
+            #{item.planMileage},
+            #{item.actMileage},
+            #{item.returnTemperature},
+            #{item.returnReceipt},
+            #{item.dispatchProgress},
+            #{item.creator},
+            #{item.createName},
+            SYSDATE(),
+            #{item.modifier},
+            #{item.modifyName},
+            #{item.modifyTime},
+            #{item.owbDriverPhone},
+            #{item.owbDriverName}
+            )
+        </foreach>
+    </insert>
+
+    <update id="batchUpdate" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";">
+            UPDATE GY_DISPATCH_ORDER SET
+            track_status = #{item.trackStatus},
+            modifier = #{item.modifier},
+            modify_name = #{item.modifyName},
+            modify_time = #{item.modifyTime}
+            WHERE id=#{item.id}
+        </foreach>
+    </update>
+
+    <insert id="batchMerge" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index" separator=";">
+            INSERT INTO GY_DISPATCH_ORDER (
+            id,
+            tenant_id,
+            owb_ec_no,
+            elo_no,
+            ex_ec_no,
+            owb_car_no,
+            owb_shipper_id,
+            owb_shipper_name,
+            owb_office_name,
+            owb_office_Id,
+            dispatch_time,
+            exception_status,
+            handle_status,
+            exception_message,
+            has_gps,
+            has_temperture,
+            track_status,
+            dispatch_status,
+            plan_mileage,
+            act_mileage,
+            return_temperature,
+            return_receipt,
+            dispatch_progress,
+            creator,
+            create_name,
+            create_time,
+            modifier,
+            modify_name,
+            modify_time,
+            owb_driver_phone,
+            owb_driver_name,
+            vehicle_type
+          ) VALUES(
+            #{item.id},
+            #{item.tenantId},
+            #{item.owbEcNo},
+            #{item.eloNo},
+            #{item.exEcNo},
+            #{item.owbCarNo},
+            #{item.owbShipperId},
+            #{item.owbShipperName},
+            #{item.owbOfficeName},
+            #{item.owbOfficeId},
+            #{item.dispatchTime},
+            #{item.exceptionStatus},
+            #{item.handleStatus},
+            #{item.exceptionMessage},
+            #{item.hasGps},
+            #{item.hasTemperture},
+            #{item.trackStatus},
+            #{item.dispatchStatus},
+            #{item.planMileage},
+            #{item.actMileage},
+            #{item.returnTemperature},
+            #{item.returnReceipt},
+            #{item.dispatchProgress},
+            #{item.creator},
+            #{item.createName},
+            SYSDATE(),
+            #{item.modifier},
+            #{item.modifyName},
+            #{item.modifyTime},
+            #{item.owbDriverPhone},
+            #{item.owbDriverName},
+            #{item.vehicleType}
+            )ON DUPLICATE KEY UPDATE
+            exception_message = #{item.exceptionMessage},
+            dispatch_status = #{item.dispatchStatus},
+            exception_status = #{item.exceptionStatus},
+            return_receipt = #{item.returnReceipt},
+            dispatch_progress = #{item.dispatchProgress},
+            handle_status = #{item.handleStatus},
+            has_gps = #{item.hasGps},
+            has_temperture = #{item.hasTemperture},
+            vehicle_type = #{item.vehicleType},
+            rec_status = #{item.recStatus},
+            modifier = #{item.modifier},
+            modify_name = #{item.modifyName},
+            modify_time = #{item.modifyTime}
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jlt.datasync.mapper.pms.JltJobDetailMapper">
+    <resultMap type="com.jlt.datasync.domain.JltJobDetail" id="jltJobDetailResultMap">
+        <result property="id" column="id"/>
+        <result property="tenantId" column="tenant_id"/>
+        <result property="jobId" column="job_id"/>
+        <result property="jobType" column="job_type"/>
+        <result property="schemaName" column="schema_name"/>
+        <result property="tableName" column="table_name"/>
+        <result property="isExcludeTime" column="is_exclude_time"/>
+        <result property="isExcludeTenantId" column="is_exclude_tenant_id"/>
+        <result property="dataReadSource" column="data_read_source"/>
+        <result property="redisKey" column="redis_key"/>
+        <result property="tenantIdCondition" column="tenant_id_condition"/>
+        <result property="noInsertColumns" column="no_insert_columns"/>
+        <result property="noUpdateColumns" column="no_update_columns"/>
+        <result property="lastExecSuccessTime" column="last_exec_success_time"/>
+        <result property="lastExecResult" column="last_exec_result"/>
+        <result property="extendWhereCondition" column="extend_where_condition"/>
+        <result property="orderId" column="order_id"/>
+        <result property="customerSql" column="customer_sql"/>
+        <result property="msg" column="msg"/>
+        <result property="recStatus" column="rec_status"/>
+        <result property="creator" column="creator"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modifyName" column="modify_name"/>
+        <result property="modifyTime" column="modify_time"/>
+    </resultMap>
+    <sql id="select">
+		<![CDATA[
+
+			SELECT
+					id,
+					tenant_id,
+					job_id,
+					job_type,
+					schema_name,
+					table_name,
+					is_exclude_time,
+					is_exclude_tenant_id,
+					data_read_source,
+					redis_key,
+					tenant_id_condition,
+					no_update_columns,
+					no_insert_columns,
+					customer_sql,
+					last_exec_success_time,
+					last_exec_result,
+					msg,
+					extend_where_condition,
+					order_id,
+					rec_status,
+					creator,
+					create_name,
+					create_time,
+					modifier,
+					modify_name,
+					modify_time
+
+        ]]>
+	</sql>
+
+    <sql id="findByExample">
+        WHERE 1=1 and rec_status = 0
+        <if test="id!=null">AND id = #{id}</if>
+        <if test="jobId!=null">AND job_id = #{jobId}</if>
+        <if test="schemaName!=null and schemaName!=''">AND schema_name = #{schemaName}</if>
+        <if test="tableName!=null and tableName!=''">AND table_name = #{tableName}</if>
+        <if test="jobType!=null and jobType!=''">AND job_type = #{jobType}</if>
+    </sql>
+
+    <select id="findOne" resultMap="jltJobDetailResultMap" parameterType="com.jlt.datasync.condition.JltJobDetailCondition">
+        <include refid="select"/>
+        from jlt_job_detail
+        <include refid="findByExample"/>
+    </select>
+
+    <select id="findList" resultMap="jltJobDetailResultMap" parameterType="com.jlt.datasync.condition.JltJobDetailCondition">
+        <include refid="select"/>
+        from jlt_job_detail
+        <include refid="findByExample"/>
+    </select>
+
+    <update id="update" parameterType="com.jlt.datasync.condition.JltJobDetailCondition">
+        update jlt_job_detail
+        set last_exec_result= #{lastExecResult},
+        <if test='lastExecResult!=null and lastExecResult == "Y"'>last_exec_success_time = #{lastExecSuccessTime},</if>
+        msg = #{msg}
+        <include refid="findByExample"/>
+    </update>
+</mapper>
