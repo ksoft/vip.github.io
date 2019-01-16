@@ -12,7 +12,7 @@ Controller默认单例
 ## 配置RedisConfig
 ```markdown
 /**
- * @author Billy.Zhang
+ * @author zhangjianbo
  * @date 2018/10/12
  */
 @Configuration
@@ -121,22 +121,22 @@ public class JobLogAspect {
     /**
      * 定义pointcut，可拦截注解或定义包/方法
      */
-    @Pointcut("@annotation(com.jlt.common.annotation.JobLog)")
+    @Pointcut("@annotation(com.xxx.common.annotation.JobLog)")
     public void jobLog() {
     }
 
     @Before("jobLog()")
     public void doBefore(JoinPoint joinPoint) throws Throwable {
         try {
-            JltJobDetail jltJobDetail = (JltJobDetail) joinPoint.getArgs()[0];
+            XxxJobDetail xxxJobDetail = (XxxJobDetail) joinPoint.getArgs()[0];
             String msg = "";
-            if (JobType.READ.getKey().equals(jltJobDetail.getJobType())) {
-                msg = "【" + jltJobDetail.getTableName() + "】,开始抽取数据 ";
+            if (JobType.READ.getKey().equals(xxxJobDetail.getJobType())) {
+                msg = "【" + xxxJobDetail.getTableName() + "】,开始抽取数据 ";
             } else {
-                msg = "【" + jltJobDetail.getTableName() + "】,开始写入数据 ";
+                msg = "【" + xxxJobDetail.getTableName() + "】,开始写入数据 ";
             }
             logger.info(msg);
-            //jltJobDetailLogBiz.insertLog(jltJobDetail, msg, new Date());
+            //xxxJobDetailLogBiz.insertLog(xxxJobDetail, msg, new Date());
         } catch (Exception e) {
             logger.error("日志处理异常，不影响业务逻辑！错误信息：" + e.getMessage());
         }
@@ -146,28 +146,28 @@ public class JobLogAspect {
     public void doAfterReturning(JoinPoint joinPoint, Object ret, JobLog jobLog) throws Throwable {
         try {
             JobType jobType = jobLog.jobTye();
-            JltJobDetail jltJobDetail = (JltJobDetail) joinPoint.getArgs()[0];
+            XxxJobDetail xxxJobDetail = (XxxJobDetail) joinPoint.getArgs()[0];
             String msg = "";
             if (JobType.READ.equals(jobType)) {
                 DataTransferDto dataTransferDto = (DataTransferDto) joinPoint.getArgs()[1];
                 int count = 0;
                 List<Map<String, Object>> dataList;
-                if (DataSchema.SAAS.getKey().equals(jltJobDetail.getSchemaName())) {
-                    dataList = dataTransferDto.getSaasDataMap().get(jltJobDetail.getTableName());
-                } else if (DataSchema.UPM.getKey().equals(jltJobDetail.getSchemaName())) {
-                    dataList = dataTransferDto.getUpmDataMap().get(jltJobDetail.getTableName());
+                if (DataSchema.SAAS.getKey().equals(xxxJobDetail.getSchemaName())) {
+                    dataList = dataTransferDto.getSaasDataMap().get(xxxJobDetail.getTableName());
+                } else if (DataSchema.UPM.getKey().equals(xxxJobDetail.getSchemaName())) {
+                    dataList = dataTransferDto.getUpmDataMap().get(xxxJobDetail.getTableName());
                 } else {
-                    dataList = dataTransferDto.getPmsDataMap().get(jltJobDetail.getTableName());
+                    dataList = dataTransferDto.getPmsDataMap().get(xxxJobDetail.getTableName());
                 }
                 if (dataList != null) {
                     count = dataList.size();
                 }
-                msg = "【"+jltJobDetail.getTableName()+"】，抽取数据成功，数量：" + count;
+                msg = "【"+xxxJobDetail.getTableName()+"】，抽取数据成功，数量：" + count;
             } else {
-                msg += "【" + jltJobDetail.getTableName() + "】，写入数据成功";
+                msg += "【" + xxxJobDetail.getTableName() + "】，写入数据成功";
             }
             logger.info(msg);
-            //jltJobDetailLogBiz.insertLog(jltJobDetail, msg, new Date());
+            //xxxJobDetailLogBiz.insertLog(xxxJobDetail, msg, new Date());
         } catch (Exception e) {
             logger.error("日志处理异常，不影响业务逻辑！错误信息：" + e.getMessage());
         }
