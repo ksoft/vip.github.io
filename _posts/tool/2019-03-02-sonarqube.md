@@ -36,5 +36,6 @@ sonar.web.port=9000
 ```markdown
 mvn -DskipTests=true compile org.codehaus.sonar:sonar-maven-plugin:4.5.7:sonar -f pom.xml
 ```
+
 ### 七、其它
 - sonaQube中，如果需要配置排除，在菜单栏：配置>>通用设置>>排除 中配置
