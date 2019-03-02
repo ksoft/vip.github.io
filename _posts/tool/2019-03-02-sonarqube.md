@@ -28,12 +28,13 @@ sonar.web.port=9000
 ## 四、汉化
 - 将汉化包[[l10n-zh]](http://www.datuzi.vip/softs/sonar-l10n-zh-plugin-1.10-RC2-SNAPSHOT.jar)，放到sonarQube安装目录下的：\extensions\plugins
 
-## 启动
+## 五、启动
 - 在bin目录下，执行：StartSonar.bat，启动sonarQube
 
-## 四、与maven集成
+## 六、与maven集成
 - maven打包时使用如下命令：
 ```markdown
 install org.codehaus.sonar:sonar-maven-plugin:4.5.7:sonar -f pom.xml
 ```
-## sonaQube中，如果需要配置排除，在菜单栏：配置>>通用设置>>排除 中配置
+## 七、其它
+- sonaQube中，如果需要配置排除，在菜单栏：配置>>通用设置>>排除 中配置
