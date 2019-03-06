@@ -65,9 +65,14 @@ mvn compile sonar:sonar
     - 将下载的文件放于D:/gitRunner目录下，cmd执行以下命令，在当前目录会生成config.toml文件
     ```markdown
       cd D:/gitRunner
+      #1.安装服务
+      gitlab-runner-windows-386.exe install
+      #2.执行start，或者在windwos服务中，启动服务：gitlab-runner
+      gitlab-runner-windows-386.exe start
+      #3.注册runner
       gitlab-runner-windows-386.exe register
     ```
-    - 按提示输入第七步的url和token，tag需要跟之后需要配置的.gitlab-ci.yml配置的tags一致，才能执行
+    - 第3步，按提示输入第七步的url和token，tag需要跟之后需要配置的.gitlab-ci.yml配置的tags一致，才能执行
     - 安装完在GitLab Runners里，可以看到如下信息：
     ![GitLabRunner](http://www.datuzi.vip/photos/gitlab-runner/gitlab-runner-2.png)
 - linux 下安装
