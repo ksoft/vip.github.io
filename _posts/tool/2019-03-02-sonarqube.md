@@ -38,18 +38,18 @@ sonar.sorceEncoding=UTF-8
 ### 六、与maven集成
 - 修改maven /conf/settings.xml，profiles下新增以下代码：
 ```markdown
-<profile>
-    <id>sonar</id>
-    <activation>
-        <activeByDefault>true</activeByDefault>
-    </activation>
-    <properties>
-        <!-- Optional URL to server. Default value is http://localhost:9000 -->
-        <sonar.host.url>
-          http://localhost:9000
-        </sonar.host.url>
-    </properties>
-</profile>
+    <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <!-- Optional URL to server. Default value is http://localhost:9000 -->
+            <sonar.host.url>
+              http://localhost:9000
+            </sonar.host.url>
+        </properties>
+    </profile>
 ```
 - maven打包时使用如下命令，就能分析项目，并将结果写入sonarQube数据库，并在sonarQube Web页面展示：
 ```markdown
