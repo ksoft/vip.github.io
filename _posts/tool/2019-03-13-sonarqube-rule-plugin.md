@@ -27,3 +27,18 @@ description: sonarqube 自定义规则
 ### 编写完后，执行maven命令：clean install -DskipTests=true  sonar-packaging:sonar-plugin
 
 ### 将生成的jar包复制到sonarqube安装目录/extensions/plugins/目录下，重启sonarqube生效
+
+### json文件，状态说明：
+```markdown
+type 类型:
+  BUG BUG
+  VULNERABILITY 漏洞
+  CODE_SMELL 坏味道
+
+defaultSeverity 默认问题验证性：
+    INFO,提示
+    MINOR,次要
+    MAJOR,主要
+    CRITICAL,严重
+    BLOCKER; 阻断
+```
