@@ -24,4 +24,6 @@ description: sonarqube 自定义规则
 
 ### 具体代码参照：[[测试代码]](http://www.datuzi.vip/softs/sonarrule.rar)
 
+### 编写完后，执行maven命令：clean install -DskipTests=true  sonar-packaging:sonar-plugin
 
+### 将生成的jar包复制到sonarqube安装目录/extensions/plugins/目录下，重启sonarqube生效
