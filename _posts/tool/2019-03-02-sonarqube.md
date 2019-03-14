@@ -142,9 +142,10 @@ sonar.gitlab.project_id=git@192.168.99.100:root/ucarbase.git
 -  进入/bin目录，执行sonar-scanner.bat,将会在sonarqube web端查看到分析结果
 
 ### 十三、与jenkens集成
-
+- jenkins中安装 gitlab-jenkins-plugin，在jenkins中配置token，获取构建路径url
 
 ### 十四、gitLab web hooks
+- webhooks 配置jenkins构建路径的 url和token
 
 ### 十五、其它
 - sonaQube中，如果需要配置排除，在菜单栏：配置>>通用设置>>排除 中配置
