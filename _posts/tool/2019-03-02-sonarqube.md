@@ -122,5 +122,29 @@ myjob_deploy:
 
 ### 十一、提交代码，查看GitLab Pipeline和sonarQube Web页面
 
-### 十二、其它
+
+### 十二、sonarScanner使用
+- 下载sonarScanner
+- 配置压缩包：/conf/sonar-scanner.properties 文件
+```markdown
+#----- Default SonarQube server
+sonar.host.url=http://localhost:9000
+#----- Default source code encoding
+sonar.sourceEncoding=UTF-8
+#项目的唯一标识，不能重复
+sonar.projectKey=test-key
+#项目的名字
+sonar.projectName=test
+sonar.java.binaries=target/classes
+sonar.sources=src/main/java
+sonar.gitlab.project_id=git@192.168.99.100:root/ucarbase.git
+```
+-  进入/bin目录，执行sonar-scanner.bat,将会在sonarqube web端查看到分析结果
+
+### 十三、与jenkens集成
+
+
+### 十四、gitLab web hooks
+
+### 十五、其它
 - sonaQube中，如果需要配置排除，在菜单栏：配置>>通用设置>>排除 中配置
