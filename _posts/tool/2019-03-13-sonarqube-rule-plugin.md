@@ -22,7 +22,7 @@ description: sonarqube 自定义规则
 - ControllerClassNameCheck_java.html
 - ControllerClassNameCheck_java.json
 
-### 具体代码参照：[[测试代码]](http://www.datuzi.vip/softs/sonarrule.rar)
+### 具体代码参照：[[测试代码]](http://www.datuzi.cn/softs/sonarrule.rar)
 
 ### 编写完后，执行maven命令：clean install -DskipTests=true  sonar-packaging:sonar-plugin
 

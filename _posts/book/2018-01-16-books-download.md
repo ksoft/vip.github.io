@@ -11,7 +11,7 @@ keywords: 电子书
 []()
 
 ### JQuery
-[jQuery EasyUI 1.4.5 版 API 中文版 (Made By Richie696).chm](http://www.datuzi.vip/books/jquery/EasyUI.chm)
+[jQuery EasyUI 1.4.5 版 API 中文版 (Made By Richie696).chm](http://www.datuzi.cn/books/jquery/EasyUI.chm)
 
 ### SpringBoot
 []()

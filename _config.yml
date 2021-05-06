@@ -4,7 +4,7 @@ email: k963@vip.qq.com
 description: > # this means to ignore newlines until "baseurl:"
   大兔子的博客
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: http://www.datuzi.vip # the base hostname & protocol for your site
+url: http://www.datuzi.cn # the base hostname & protocol for your site
 rss_url: /pages/feed.xml
 author: K963
 
@@ -18,13 +18,13 @@ weibo: 2076659595
 github: ksoft
 
 # avatar and Favicon
-avatar: http://www.datuzi.vip/assets/img/avatar.jpg
-favicon: http://www.datuzi.vip/assets/img/avatar.jpg
+avatar: http://www.datuzi.cn/assets/img/avatar.jpg
+favicon: http://www.datuzi.cn/assets/img/avatar.jpg
 
 # google analytics config
 ga:
   id: UA-54767140-1
-  url: www.datuzi.vip
+  url: www.datuzi.cn
 
 # Build settings
 permalink: /:year/:month/:day/:title.html

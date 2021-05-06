@@ -6,7 +6,7 @@ tags: SpringMvc 原理
 keywords: SpringMvc 原理
 ---
 ## SpringMVC原理图
-![SpringMvc](http://www.datuzi.vip/photos/springmvc/springmvc.png)
+![SpringMvc](http://www.datuzi.cn/photos/springmvc/springmvc.png)
 
 ## SpringMVC运行原理
 1、客户端发出一个http请求给web服务器，web服务器对http请求进行解析，如果匹配DispatcherServlet的请求映射路径（在web.xml中指定），web容器将请求转交给DispatcherServlet.

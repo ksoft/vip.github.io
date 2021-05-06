@@ -1,6 +1,6 @@
 ### 我的博客
 
-地址：[http://www.datuzi.vip](http://www.datuzi.vip)
+地址：[http://www.datuzi.cn](http://www.datuzi.cn)
 
 ### 安装说明
 
