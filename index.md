@@ -10,4 +10,4 @@ layout: post
 ## LOVE
 
 
-![MyLove](http://www.datuzi.cn/photos/mylove/love.jpg)
+![MyLove](/photos/mylove/love.jpg)

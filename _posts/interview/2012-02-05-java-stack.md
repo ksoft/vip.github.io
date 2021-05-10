@@ -17,4 +17,4 @@ keywords: JVM的栈内存
 
     Java帧上的所有数据都是此线程私有的。任何线程都不能访问另一个线程的栈数据，因此我们不需要考虑多线程情况下栈数据的访问同步问题。当一个线程调用一个方法时，方法的的局部变量保存在调用线程Java栈的帧中。只有一个线程能总是访问那些局部变量，即调用方法的线程
 
-![JVM的栈内存](http://www.datuzi.cn/photos/java/java-stack.png)
+![JVM的栈内存](/photos/java/java-stack.png)

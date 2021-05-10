@@ -57,7 +57,7 @@ mvn compile sonar:sonar
 ```
 
 ### 七、用管理员登录GitLab，在Runners页面中，可以看到GitLabURL和token
-![GitLabRunner](http://www.datuzi.cn/photos/gitlab-runner/gitlab-runner-1.png)
+![GitLabRunner](/photos/gitlab-runner/gitlab-runner-1.png)
 
 ### 八、集成GiltLab Runner
 - windows 安装：
@@ -74,12 +74,12 @@ mvn compile sonar:sonar
     ```
     - 第3步，按提示输入第七步的url和token，tag需要跟之后需要配置的.gitlab-ci.yml配置的tags一致，才能执行
     - 安装完在GitLab Runners里，可以看到如下信息：
-    ![GitLabRunner](http://www.datuzi.cn/photos/gitlab-runner/gitlab-runner-2.png)
+    ![GitLabRunner](/photos/gitlab-runner/gitlab-runner-2.png)
 - linux 下安装
 
 ### 九、集成GitLab插件
 - 在GitLab中，创建accessToken:
-![GitLab](http://www.datuzi.cn/photos/gitlab/gitlab-accessToken.png)
+![GitLab](/photos/gitlab/gitlab-accessToken.png)
 - 在sonarQube Web页面中，配置accessToken和GitLab URL
 
 ### 十、创建.gitlab-ci.yml
